@@ -12,16 +12,24 @@
             <p>(desc scrolls vert if needed</p>
         </section>
 
+        <v-alert
+            :value="!!loadError"
+            type="error"
+            v-text="'There was an error loading Portfolio content. (See log for details)'"
+        />
+
         <section class="portfolio__projPics">
             carousel? no timing
             images saved to media lib w/ cat: "Whatever" under parent "Portfolio"
             click big thumb to expand (dialog?)
             
-            <img
-                v-for="m in media"
-                :key="m.id"
-                :src="m.source_url"
-            >
+            <v-carousel :cycle="false">
+                <v-carousel-item
+                    v-for="m in media"
+                    :key="m.id"
+                    :src="m.source_url"
+                />
+            </v-carousel>
         </section>
     </article>
 </template>
@@ -37,6 +45,7 @@ export default {
     data: () => ({
         foo: 'bar',
         media: [],
+        loadError: null,
     }),
 
     created() {
@@ -49,6 +58,12 @@ export default {
          */
         getMedia() {
             portfolio.getMedia().then(media => this.media = media);
+            this.$api.get('/media?filter[category_name]=portfolio')
+                .then(data => {
+                    this.media = data;
+                })
+                .catch(thrown => console.error('Error fetching media', thrown))
+            ;
         },
     },
 }

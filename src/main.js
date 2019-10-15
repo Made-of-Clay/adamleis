@@ -7,8 +7,11 @@ import app from './app';
 import mocPortfolio from './portfolio';
 import mocHome from './home';
 
+import api from './services/api';
+
 Vue.use(Vuetify);
 Vue.use(VueRouter);
+Vue.use(api);
 
 const routes = [
     { path: '/', component: mocHome, },

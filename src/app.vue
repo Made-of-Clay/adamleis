@@ -17,6 +17,7 @@
             </h1>
         </v-toolbar>
 
+        <!-- TODO add keep-alive or cache so portfolio stuff doesn't fetch every time? -->
         <router-view />
     </v-app>
 </template>
@@ -24,6 +25,7 @@
 <script>
 import fancyHeader from './fancy-header';
 import BlogService from './services/Blog';
+import BaseService from './services/BaseRequest';
 
 const months = [
     "January",
@@ -69,6 +71,7 @@ export default {
 
     created() {
         this.getPosts();
+        //
     },
 
     methods: {
@@ -76,11 +79,24 @@ export default {
             // window scrollto logic
         },
 
+        /**
+         * Get blog posts for front page
+         */
         getPosts() {
             const blog = new BlogService();
             blog.getPosts().then(posts => {
                 // filter out "Welcome" post
                 this.recentPosts = posts.filter(post => post.id !== 7);
+            });
+        },
+
+        /**
+         * Get categories for use throughout website
+         */
+        getCategories() {
+            const baseReq = new BaseService();
+            baseReq.request(`${baseReq.baseUrl}/categories`).then(data => {
+                // save to vuex
             });
         },
     },
