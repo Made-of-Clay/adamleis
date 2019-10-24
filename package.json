@@ -4,8 +4,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "dev": "vuepress dev site",
+    "build": "vuepress build site"
   },
   "repository": {
     "type": "git",
