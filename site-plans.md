@@ -35,6 +35,8 @@ Contact form in footer (across whole site w/ social media links). Form submits t
 ## Theme Ideas
 Should be simple enough to focus on (text) content, but interesting enough to show design interests. Maybe incorporate subtle tech imagery in background?
 
+Consider using Tailwind for custom theme. It needs added to viewpress as postcss plugin.
+
 ## Other VuePress Sites
 The following are sites to consider for design/structure inspiration:
 
