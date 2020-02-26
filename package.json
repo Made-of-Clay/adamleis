@@ -2,7 +2,12 @@
   "dependencies": {
     "vuepress": "^1.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "tailwindcss": "^1.2.0"
+  },
   "scripts": {
     "dev": "vuepress dev site",
     "build": "vuepress build site"

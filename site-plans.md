@@ -41,3 +41,4 @@ Consider using Tailwind for custom theme. It needs added to viewpress as postcss
 The following are sites to consider for design/structure inspiration:
 
 - [VuePress Gallery](https://vuepress.gallery/)
+- [Jaime Jones](https://jai.me/speaking)
