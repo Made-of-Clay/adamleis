@@ -7,6 +7,12 @@ module.exports = {
             { text: 'Tests', link: '/tests/' },
         ]
     },
+    postcss: {
+        plugins: [
+            require('autoprefixer'),
+            require('tailwindcss')('./tailwind.js'),
+        ],
+    },
 };
 
 /*
