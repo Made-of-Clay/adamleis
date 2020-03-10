@@ -7,14 +7,12 @@ actionText: Do some action son
 footer: My sweet footer
 ---
 
-# Root ReadMe Title
+# Main Root Page
 
-Some readme text!
+This will display some text to the user visiting the home page.
 
-In truth, this should list out recent posts (5-10 most recent?). I will also have an About section (with photo).
+In truth, this should list out recent posts (5-10 most recent?). Large photo is "sidebar" (but actually header, esp at mobile sizes).
 
-The footer will list out the categories and tags. To the right of that will be the About me blerb (maybe just a snippet with social links and a link to a more robust page?)
-
-Sidebars on regular pages should be about related posts (same category or tags?)
+The footer will list out the categories and tags, About Me link, and social media? Social media may stay in sidebar/header.
 
 Check out the [Tests!](/tests/)

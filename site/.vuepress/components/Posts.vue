@@ -17,7 +17,7 @@ export default {
     props: ["page"],
     computed: {
         posts() {
-            let currentPage = this.page ? this.page : this.$page.path;
+            let currentPage = this.page ? this.page : this.$page.regularPath;
             let posts = this.$site.pages
                 .filter(page => page.path.match(new RegExp(`(${currentPage})(?=.*html)`)))
                 .sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
