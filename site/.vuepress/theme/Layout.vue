@@ -1,16 +1,15 @@
 <template>
     <div id="global-layout">
-        Layout
-        <!-- <Index v-if="$page.frontmatter.home" />
+        <Index v-if="$page.frontmatter.home" />
         <Page v-else>
             <Content />
-        </Page> -->
+        </Page>
     </div>
 </template>
 
 <script>
-import Index from './components/Index';
-import Page from './components/Page';
+import Index from '../components/Index';
+import Page from '../components/Page';
 
 export default {
     computed: {
