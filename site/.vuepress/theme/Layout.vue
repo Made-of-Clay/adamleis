@@ -4,12 +4,14 @@
         <Page v-else>
             <Content />
         </Page>
+
+        <Tattle>Layout.vue</Tattle>
     </div>
 </template>
 
 <script>
-import Index from '../components/Index';
-import Page from '../components/Page';
+// import Index from '../components/Index';
+// import Page from '../components/Page';
 
 export default {
     computed: {

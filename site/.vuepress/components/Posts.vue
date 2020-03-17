@@ -1,15 +1,21 @@
 <template>
-    <div v-if="posts.length" class="posts">
-        <div v-for="post in posts" class="post">
-            <router-link :to="post.path">
-                <div>
-                    <img v-if="post.frontmatter.image" :src="$withBase(post.frontmatter.image)" alt="">
-                </div>
-                <h2>{{post.frontmatter.title}}</h2>
-                <p>{{post.frontmatter.description}}</p>
-            </router-link>
+    <div>
+        <div v-if="posts.length" class="posts">
+            <div v-for="post in posts" class="post">
+                <router-link :to="post.path">
+                    <div>
+                        <img v-if="post.frontmatter.image" :src="$withBase(post.frontmatter.image)" alt="">
+                    </div>
+                    <h2>{{post.frontmatter.title}}</h2>
+                    <p>{{post.frontmatter.description}}</p>
+                </router-link>
+            </div>
         </div>
+        <Tattle>Posts.vue</Tattle>
     </div>
+    <!-- 
+        Displays a list of posts of a given type (within some directory, e.g. tests)
+     -->
 </template>
 
 <script>
@@ -28,5 +34,7 @@ export default {
 </script>
 
 <style>
-
+.posts {
+    box-shadow: 1px 3px 5px hsla(0, 0, 0, 0.25);
+}
 </style>

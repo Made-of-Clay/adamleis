@@ -1,5 +1,7 @@
 <template>
     <div>
+        Check out all <router-link to="/tests">Tests</router-link> here!
+        
         <div v-for="post in posts">
             <h2>
                 <router-link :to="post.path">
@@ -11,8 +13,9 @@
                 {{post.frontmatter.description}}
             </p>
 
-            <p><router-link :to="post.path">Read more</router-link></p>
+            <router-link :to="post.path">Read more</router-link>
         </div>
+        <Tattle>Index.vue</Tattle>
     </div>
 </template>
 
@@ -27,5 +30,10 @@ export default {
 </script>
 
 <style>
-
+h2 {
+    font-size: 1.25em;
+}
+a[href] {
+    color: cornflowerblue;
+}
 </style>

@@ -1,7 +1,7 @@
 <template>
     <main>
         <slot />
-        <small>Page Component</small>
+        <Tattle>Page.vue</Tattle>
     </main>
 </template>
 
