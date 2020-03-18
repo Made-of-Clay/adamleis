@@ -34,6 +34,6 @@ h2 {
     font-size: 1.25em;
 }
 a[href] {
-    color: cornflowerblue;
+    /* color: cornflowerblue; */
 }
 </style>

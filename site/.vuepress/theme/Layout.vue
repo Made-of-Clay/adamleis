@@ -1,5 +1,20 @@
 <template>
     <div id="global-layout">
+        <header id="theHeader" class="flex">
+            <span class="spacer" />
+            <span>Adam Leis home link</span>
+            <span>search</span>
+            <nav>
+                <router-link
+                    v-for="nav in navLinks"
+                    :key="nav.link"
+                    :to="nav.link"
+                >
+                    {{nav.text}}
+                </router-link>
+            </nav>
+        </header>
+
         <Index v-if="$page.frontmatter.home" />
         <Page v-else>
             <Content />
@@ -10,9 +25,6 @@
 </template>
 
 <script>
-// import Index from '../components/Index';
-// import Page from '../components/Page';
-
 export default {
     computed: {
         layout () {
@@ -24,11 +36,22 @@ export default {
                 return 'Layout';
             }
             return 'NotFound';
-        }
-    }
+        },
+        navLinks: vm => vm.$site.themeConfig.nav,
+    },
 };
 </script>
 
 <style lang="stylus">
-@import './styles/theme.styl';
+    @import './styles/theme.styl';
+
+    .spacer {
+        @apply flex-1;
+    }
+
+    #theHeader {
+        background: url('/photo.jpg') black;
+        background-size: cover;
+        height: 100px;
+    }
 </style>
