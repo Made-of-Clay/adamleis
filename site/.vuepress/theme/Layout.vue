@@ -1,10 +1,35 @@
 <template>
-    <div id="global-layout">
-        <header id="theHeader" class="flex">
+    <div id="layout" class="flex flex-col md:flex-row h-full">
+        <header id="theHeader" class="layout__header flex h-64 md:h-auto">
+            <!-- 
+                SMALL SCREEN
+                spacer          search (order:1)
+                site title      social links
+                -- desc
+                site nav (listed horizontally)
+
+                MD-XL SCREEN
+                (vertical) spacer
+                site title
+                -- desc
+                site nav
+                search
+                social links
+             -->
             <span class="spacer" />
-            <span>Adam Leis home link</span>
-            <span>search</span>
-            <nav>
+            <div class="layout__siteMasthead shim-order">
+                <router-link to="/">
+                    Adam Leis
+                </router-link>
+                <span>
+                    Person with face and parts
+                </span>
+            </div>
+            <!-- ============================ -->
+            <!-- see phone sketches on layout -->
+            <!-- ============================ -->
+
+            <nav class="layout__siteNav shim-order">
                 <router-link
                     v-for="nav in navLinks"
                     :key="nav.link"
@@ -13,14 +38,29 @@
                     {{nav.text}}
                 </router-link>
             </nav>
+
+            <span class="layout__siteSearch shim-order">
+                <input type="text" placeholder="Site Search" />
+            </span>
+
+            <div class="layout__socialLinks shim-order">
+                <a href="https://facebook.com">
+                    F
+                </a>
+                <a href="https://linkedin.com">
+                    L
+                </a>
+            </div>
         </header>
 
-        <Index v-if="$page.frontmatter.home" />
-        <Page v-else>
-            <Content />
-        </Page>
+        <div class="layout__body">
+            <Index v-if="$page.frontmatter.home" />
+            <Page v-else>
+                <Content />
+            </Page>
+        </div>
 
-        <Tattle>Layout.vue</Tattle>
+        <!-- <Tattle>Layout.vue</Tattle> -->
     </div>
 </template>
 
@@ -45,13 +85,29 @@ export default {
 <style lang="stylus">
     @import './styles/theme.styl';
 
+    $mdBreakpoint = 768px
+
     .spacer {
         @apply flex-1;
+
+        @media (max-width: $mdBreakpoint) {
+            @apply order-1;
+        }
     }
 
-    #theHeader {
+    .layout__header {
         background: url('/photo.jpg') black;
         background-size: cover;
-        height: 100px;
+
+        @media (min-width: $mdBreakpoint) {
+            background-position: 45%;
+            width: 400px;
+        }
+
+    }
+    .shim-order {
+        @media (max-width: $mdBreakpoint) {
+            @apply order-2;
+        }
     }
 </style>
