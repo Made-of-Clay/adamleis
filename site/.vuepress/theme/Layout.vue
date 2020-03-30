@@ -1,7 +1,38 @@
 <template>
     <div id="layout" class="flex flex-col md:flex-row h-full">
-        <header id="theHeader" class="layout__header flex h-64 md:h-auto">
-            <!-- 
+        <header
+            id="theHeader"
+            class="flex flex-wrap h-64 md:h-auto md:w-400 bg-black md:bg-center md:bg-cover"
+            style="background-image: url('/photo.jpg')"
+        >
+            <div v-if="topSearchShowing" class="w-full">
+                <span class="spacer" />
+                <!-- <site-search /> -->
+                <search-box />
+            </div>
+
+            <div class="layout__siteMasthead shim-order">
+                <div>
+                    <router-link to="/">
+                        Adam Leis
+                    </router-link>
+                    <span>
+                        Person with face and parts
+                    </span>
+                </div>
+
+                <span class="spacer" />
+
+                <div class="layout__socialLinks shim-order">
+                    <a href="https://facebook.com">
+                        F
+                    </a>
+                    <a href="https://linkedin.com">
+                        L
+                    </a>
+                </div>
+            </div>
+            <!--
                 SMALL SCREEN
                 spacer          search (order:1)
                 site title      social links
@@ -16,15 +47,6 @@
                 search
                 social links
              -->
-            <span class="spacer" />
-            <div class="layout__siteMasthead shim-order">
-                <router-link to="/">
-                    Adam Leis
-                </router-link>
-                <span>
-                    Person with face and parts
-                </span>
-            </div>
             <!-- ============================ -->
             <!-- see phone sketches on layout -->
             <!-- ============================ -->
@@ -43,14 +65,6 @@
                 <input type="text" placeholder="Site Search" />
             </span>
 
-            <div class="layout__socialLinks shim-order">
-                <a href="https://facebook.com">
-                    F
-                </a>
-                <a href="https://linkedin.com">
-                    L
-                </a>
-            </div>
         </header>
 
         <div class="layout__body">
@@ -65,7 +79,18 @@
 </template>
 
 <script>
+// import '~vue-material-design-icons/styles.css';
+import SearchBox from '@SearchBox'
+// import siteSearch from '../components/SiteSearch.vue';
+
 export default {
+    components: {
+        SearchBox,
+    },
+
+    data: () => ({
+        topSearchShowing: true,
+    }),
     computed: {
         layout () {
             if (this.$page.path) {
@@ -95,16 +120,6 @@ export default {
         }
     }
 
-    .layout__header {
-        background: url('/photo.jpg') black;
-        background-size: cover;
-
-        @media (min-width: $mdBreakpoint) {
-            background-position: 45%;
-            width: 400px;
-        }
-
-    }
     .shim-order {
         @media (max-width: $mdBreakpoint) {
             @apply order-2;

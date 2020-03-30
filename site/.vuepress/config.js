@@ -7,12 +7,24 @@ module.exports = {
             { text: 'Tests', link: '/tests/' },
         ]
     },
+    configureWebpack: {
+        resolve: {
+            alias: {
+               '@SearchBox': '@vuepress/plugin-search',
+            },
+        },
+    },
     postcss: {
         plugins: [
             require('autoprefixer'),
             require('tailwindcss')('./tailwind.js'),
         ],
     },
+    plugins: [
+        ['@vuepress/search', {
+           searchMaxSuggestions: 10
+        }]
+    ],
 };
 
 /*

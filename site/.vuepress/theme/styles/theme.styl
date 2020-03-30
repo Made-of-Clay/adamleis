@@ -15,7 +15,16 @@ h3 {
     @apply text-lg;
 }
 a {
-    @apply text-blue-600 underline;
+    @apply text-blue-600;
+    transition: all 0.3s;
+
+    &:hover {
+        @apply text-blue-800;
+    }
+}
+
+input {
+    @apply rounded-sm p-1;
 }
 
 @tailwind components;

@@ -1,8 +1,11 @@
 {
   "dependencies": {
+    "flexsearch": "github:nextapps-de/flexsearch",
+    "vue-material-design-icons": "^4.4.0",
     "vuepress": "^1.2.0"
   },
   "devDependencies": {
+    "@vuepress/plugin-search": "^1.4.0",
     "autoprefixer": "^9.7.4",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
