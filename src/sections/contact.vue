@@ -85,6 +85,8 @@
 import sectionMixin from './section.mixin.js';
 import vueRecaptcha from 'vue-recaptcha';
 
+let recaptchaToken = '';
+
 export default {
     components: {
         vueRecaptcha,
@@ -154,15 +156,16 @@ export default {
         validate() {
             this.$refs.form.validate();
         },
-        checkValidation(...args) {
-            console.log('checkValidation >> args', args);
+        checkValidation(token) {
             this.validate();
-            if (this.validForm) {
-                this.$refs.recaptcha.execute();
-            }
+            recaptchaToken = token;
+            // if (this.validForm) {
+            //     this.$refs.recaptcha.execute();
+            // }
             // this.$nextTick(() => this.send());
         },
-        send(recaptchaToken) {
+        send() {
+            if (!this.validForm) return;
             this.emailing = true;
             this.resetCaptcha();
             const data = Object.assign({ recaptchaToken }, this.formData);
