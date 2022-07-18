@@ -1,18 +1,11 @@
-.DS_Store
-node_modules/
+# dependencies
+node_modules
 
+# logs
 npm-debug.log
-yarn-error.log
 
-# Editor directories and files
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
+# Nuxt build
+.nuxt
 
-package-lock.json
-aws-cloud
-PHPMailer
-
-dist/report*
+# Nuxt generate
+dist
