@@ -4,6 +4,7 @@ This will just be a dumping ground now for me. My digital presence... something 
 feds to use to profile me better `;)`
 
 Home/landing page will be large-block, single-page layout with the following:
+
 - Welcome/About info (brief) w/ my photo
 - Portfolio link (`portfolio.adamleis.com`) & any recent posts
 - Blog link (`blog.adamleis.com`) & any recent posts
@@ -19,6 +20,7 @@ Probably from portfolio, link to any extra projects (e.g. Marvel calculator, top
 Link to social media where relevant (Facebook, LinkedIn) - update where necessary
 
 ## Technical requirements
+
 I'll use the following setup for the site
 
 ### Front-end
@@ -38,6 +40,7 @@ Make sure to set up WordPress with solid security, stripped down dependencies,
 and optimization plugins/code for queries
 
 ## Design Ideas
+
 Sections will be large blocks of content (scrolling is fact of life today); easily responsive
 
 Large photos (woo responsive image opportunity!)
@@ -49,12 +52,15 @@ Very minor use of rich, bright red color too; just don't miscommunicate "error!"
 Header bar/nav could use the green(s) and have a cool geometric, subtle node-grid background (think Codepen canvas node experiments)
 
 SUPER cool header bar would be canvas bg w/ animating nodes like in Codepen (give props to who you borrow from)
+
 - make it as a component for easy portability
 
 ## Blog & Portfolio
+
 Treat as separate git project? Reason for this is use of subdomains
 
 ### Portfolio
+
 Single-page, no apparent section changes
 
 List of entries, thumbnails per entry
@@ -68,6 +74,7 @@ Search/filter available too
 Portfolio entries come from Media w/ category "Portfolio" - captions can be added as well
 
 ### Blog
+
 SPA w/ area navigation (categories, tags, search, recent posts, specific post)
 
 Use Vuex/Router combo (w/ history state if easy enough)

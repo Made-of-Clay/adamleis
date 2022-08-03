@@ -3,10 +3,10 @@
 @import '~bulma/sass/utilities/functions';
 
 // Define bases
-$black: rgb(15,15,15);
-$black-off: rgb(30,30,30);
-$white: rgb(255,255,255);
-$white-off: rgb(245,245,245);
+$black: rgb(15, 15, 15);
+$black-off: rgb(30, 30, 30);
+$white: rgb(255, 255, 255);
+$white-off: rgb(245, 245, 245);
 
 //// DARK MODE ////
 $primary: $black; // Primary colors
@@ -25,7 +25,7 @@ $semitransparent: #cecece10;
 
 // Secondary colors
 $secondary: rgb(46, 201, 151);
-$secondary-bg: rgba($secondary, .1);
+$secondary-bg: rgba($secondary, 0.1);
 
 // Inverts for text etc.
 $primary-invert: invert($primary);
@@ -59,12 +59,12 @@ $secondary-invert: invert($secondary);
 
 // Better code formatting
 // Code formatting for chunks
-pre[class*="language-"] {
+pre[class*='language-'] {
   background: $black;
 }
 
 // Inline code chunks
-:not(pre)>code {
+:not(pre) > code {
   background: $secondary-bg !important;
   color: $secondary !important;
   padding: 6px 4px;
@@ -77,4 +77,3 @@ pre[class*="language-"] {
 
 /* Import the rest of Bulma */
 @import '~bulma';
-
