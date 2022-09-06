@@ -4,6 +4,8 @@ tags: [ai, digital images, art, musings]
 categories: [journal]
 ---
 
+<!-- TODO add post image from Unsplash w/ full credits; maybe make Vue component that handles that based on the URL or something? -->
+
 # AI-Generated Images
 
 <!-- make sidebar widget or something with table of contents (one probably exists already) -->
