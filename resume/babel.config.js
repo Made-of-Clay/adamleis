@@ -1,3 +1,4 @@
-module.exports = {
-  presets: ['@vue/cli-plugin-babel/preset'],
-}
+// module.exports = {
+export default {
+    presets: ['@vue/cli-plugin-babel/preset'],
+};
