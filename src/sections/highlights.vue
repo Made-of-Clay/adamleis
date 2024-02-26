@@ -19,7 +19,7 @@
                     One of my more dorky past times is playing roleplaying games à la Dungeons &amp; Dragons. This particular web app is used in a Marvel roleplaying game where roll results are percentile (1-100) and success levels are compared against a chart. I found myself thinking a calculator would not only be more visually meaningful for me but would also be good practice for whatever technology I would be using at the time. The third version can be viewed <x-link href="http://marvel.adamleis.com" v-text="'here'" /> and its source is available on <x-link href="https://github.com/Made-of-Clay/marvel-calculator" v-text="'GitHub'" />. White results are failures, green to red indicate level of success where green is a moderate success and red is a critical success. (This is well-known among the users, so more information is not needed.)
                 </p>
                 <p v-else-if="highlighted.id === 'wedding'">
-                    This little project has stood up decently to the test of time, as far as interactions go. <x-link href="http://adamandsarah.adamleis.com" v-text="'My wedding website'" /> was a fun little project done over 5 years ago. It houses one of my favorite projects: a CSS 3D interactive cube telling the story of my wife and me meeting and falling in love. It was a fun and informative project. While I'm not thrilled with reading back through how I wrote my code back then, who is? It also adds the handy feature of keeping track of how long we have been married, which was an accidental feature I noticed in the jQuery countdown plugin which is now counting up from the wedding date.
+                    This little project has stood up decently to the test of time, as far as interactions go. <x-link href="http://adam-and-sarah.adamleis.com" v-text="'My wedding website'" /> was a fun little project done over 5 years ago. It houses one of my favorite projects: a CSS 3D interactive cube telling the story of my wife and me meeting and falling in love. It was a fun and informative project. While I'm not thrilled with reading back through how I wrote my code back then, who is? It also adds the handy feature of keeping track of how long we have been married, which was an accidental feature I noticed in the jQuery countdown plugin which is now counting up from the wedding date.
                 </p>
                 <p v-else-if="highlighted.id === 'victorious'">
                     My <x-link href="http://victorious.adamleis.com" v-text="'Victorious!'" /> victory tracker app tracks the game wins of my small game group. This project showcases some skills learned while working on KONA. I would often create interfaces to display collected data. Vue was used as the framework and Vuetify for the UI components. Apexcharts is used for the pie chart and more charts are planned for future implementation. Google Firebase is used for storing the data and managing user authentication/authorization, which was helpful in learning some cloud service skills.
@@ -180,7 +180,7 @@ export default {
             id: 'wedding',
             name: 'Wedding Website',
             images: [{src: wedding, id: 'wedding'}],
-            link: 'adamandsarah.adamleis.com',
+            link: 'adam-and-sarah.adamleis.com',
         }, {
             id: 'victorious',
             name: 'Victorious!',
