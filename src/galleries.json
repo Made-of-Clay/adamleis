@@ -1,0 +1,102 @@
+[
+    {
+        "id": "kona",
+        "text": "KONA",
+        "blerb": "KONA is the project I have been working on for the last 5 years. It is a web application used internally at Rosenboom for tracking jobs & parts, activity on the shop floor, employee performance, etc… My role is primarily front-end development but frequently included back-end development, especially when updating apps from our jQuery/ CodeIgniter setup to the newer Vue/Phalcon paradigm. We wrote the back-end as a REST API and digested it from the server.",
+        "images": [
+            {
+                "src": "kona-applist-desktop.jpg",
+                "caption": "The app list showed all of the apps that a user had access to. The apps were grouped alphabetically and a filter is available for quickly finding apps. Apps could be saved by a given user into groups as a sibling tab of the app list."
+            },
+            {
+                "src": "kona-applist-mobile.jpg",
+                "caption": "Responsive design is important in KONA. People used it on phones, tablets, terminals, and office computers. Most apps were fully usable no matter the device with only a few exceptions."
+            },
+            {
+                "src": "kona-user-panel-mobile.jpg",
+                "caption": "The user panel housed account-specific controls and navigation, as well as the ability to switch between plants. When one's plant is changed, all instances of KONA immediately updated via websocket events to prevent stale data and confusion. Logging out and locking one's screen also affected all user instances. Vuex was invaluable in keeping things up-to-date and simple to change across KONA."
+            },
+            {
+                "src": "kona-notification-panel-mobile.jpg",
+                "caption": "Some apps would utilize a notification feature to send relevant users updates on tasks that required their attention. This also used WebSockets and behaved much like mobile device push notifications."
+            },
+            {
+                "src": "kona-calendar-panel-desktop.jpg",
+                "caption": "A calendar component was developed for some who needed to know ordinal dates throughout the year. This eventually served as a perfect place to include company holidays."
+            },
+            {
+                "src": "kona-blueprints-desktop.jpg",
+                "caption": "Blueprints were available for engineers and shop workers through KONA as well. Existing as PDFs, they were opened in iframes. Preview thumbnails were available and would process the PDF into an image on the fly."
+            },
+            {
+                "src": "kona-emp-peek-mobile.jpg",
+                "caption": "Various \"peek\" components were created to display useful data at a glance. This peek is an employee peek. It would display the employee photo, name, and employee ID (for those who had access). Peeks show on hovering trigger text."
+            },
+            {
+                "src": "kona-part-peek-desktop.jpg",
+                "caption": "Another example of a frequently-used peek, the part peek would be available wherever part numbers were displayed and offered brief information on the part as well as quick \"open with\" links to other apps. Blueprints were also checked and displayed availability for a given part."
+            },
+            {
+                "src": "kona-part-tree-mobile.jpg",
+                "caption": "The Part application is very robust, offering many tabs of information. The BOM (Bill of Material) Tree tab displayed hierarchical information for a given part, relevant job data, quantities, etc.... More complex jobs had larger trees, so being able to see the relationships eased a conceptual burdon. (Note that this view is mobile landscape.)"
+            },
+            {
+                "src": "kona-floorboard-desktop-contextmenu.jpg",
+                "caption": "\"Floorboard\" was my largest contribution besides the general UI of KONA. It displayed live data for the floor, specific work center locations, labor at each work center, and timeliness of each labor. Objects could be tagged as well for quick reference. Data is updated via WebSockets using socket.io."
+            },
+            {
+                "src": "kona-floorboard-desktop-layers.jpg",
+                "caption": "\"Floorboard\" also showed a number of other layers of data. Phones, terminals, printers, serial IP converters, etc... Each would display when one lost connection and for how long, as well as their IP addresses. Visibility and draggability could also be toggled for users with permission. Objects could be searched for and removed. All of \"Floorboard\" is interactive with pan/zoom features, thanks to d3 & SVGs."
+            }
+        ]
+    },
+    {
+        "id": "marvel",
+        "text": "Marvel Calculator",
+        "blerb": "One of my more dorky past times is playing roleplaying games à la Dungeons & Dragons. This particular web app is used in a Marvel roleplaying game where roll results are percentile (1-100) and success levels are compared against a chart. I found myself thinking a calculator would not only be more visually meaningful for me but would also be good practice for whatever technology I would be using at the time. You can view [the live, third version](https://marvel.adamleis.com/) &amp; its [source on GitHub](https://github.com/Made-of-Clay/marvel-calculator). White results are failures, green to red indicate level of success where green is a moderate success and red is a critical success. (This is well-known among the users, so more information is not needed.)",
+        "images": [
+            {
+                "src": "mvl-calc-yellow.jpg",
+                "caption": ""
+            },
+            {
+                "src": "mvl-calc-red.jpg",
+                "caption": ""
+            },
+            {
+                "src": "mvl-calc-chart.jpg",
+                "caption": ""
+            }
+        ]
+    },
+    {
+        "id": "wedding",
+        "text": "Wedding Website",
+        "blerb": "This little project has stood up decently to the test of time, as far as interactions go. [My wedding website](https://adam-and-sarah.adamleis.com/) was a fun little project done over 5 years ago. It houses one of my favorite projects: a CSS 3D interactive cube telling the story of my wife and me meeting and falling in love. It was a fun and informative project. While I'm not thrilled with reading back through how I wrote my code back then, who is? It also adds the handy feature of keeping track of how long we have been married, which was an accidental feature I noticed in the jQuery countdown plugin which is now counting up from the wedding date.",
+        "images": [
+            {
+                "src": "wedding.jpg",
+                "caption": ""
+            }
+        ]
+    },
+    {
+        "id": "victorious",
+        "text": "Victorious!",
+        "blerb": "My [Victorious!](https://victorious.adamleis.com/) victory tracker app tracks the game wins of my small game group. This project showcases some skills learned while working on KONA. I would often create interfaces to display collected data. Vue was used as the framework and Vuetify for the UI components. Apexcharts is used for the pie chart and more charts are planned for future implementation. Google Firebase is used for storing the data and managing user authentication/authorization, which was helpful in learning some cloud service skills.",
+        "images": [
+            {
+                "src": "victorious-mobile-player.jpg",
+                "caption": "The History timeline allows for filtering and sorting victories. As the data grows, it may be necessary to include pagination to the controls, but for now, this is sufficient (i.e. there's always more to do and this is sufficient to get the project live)."
+            },
+            {
+                "src": "victorious-mobile-history.jpg",
+                "caption": "Players' stats are displayed for quick, at-a-glance references."
+            },
+            {
+                "src": "victorious-mobile-total.jpg",
+                "caption": "Apexcharts powers the Victory Totals graphs. More graphs and charts are planned for the future."
+            }
+        ]
+    }
+]
