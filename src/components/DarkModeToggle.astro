@@ -21,22 +21,21 @@
 
 <script>
   function updateHTMLTheme(mode: "light" | "dark") {
-    const themeColorMetaTag = document.head.querySelector(
-      'meta[name="theme-color"]'
-    );
+    const themeColorMetaTag = document.head
+      .querySelector<HTMLMetaElement>('meta[name="theme-color"]');
 
+    const darkTheme = 'night';
+    const lightTheme = 'fantasy';
     if (mode === "dark") {
       document.documentElement.classList.remove("light");
       document.documentElement.classList.add("dark");
       if (themeColorMetaTag) {
-        // @ts-ignore
         themeColorMetaTag.content = "#262626";
       }
     } else {
       document.documentElement.classList.remove("dark");
       document.documentElement.classList.add("light");
       if (themeColorMetaTag) {
-        // @ts-ignore
         themeColorMetaTag.content = "#ffffff";
       }
     }
