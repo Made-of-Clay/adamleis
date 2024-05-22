@@ -22,7 +22,11 @@ const sortedPosts = posts
 
 <PageLayout>
   <PageMeta title={`Blog | ${SITE_TITLE}`} slot="meta" />
+  
   <section slot="main">
+    <h1 class="font-bold text-text-heading text-center text-4xl md:text-5xl pt-4 pb-2 overflow-hidden">
+      Adam Leis
+    </h1>
     <ul>
       {
         sortedPosts.map((post) => {
