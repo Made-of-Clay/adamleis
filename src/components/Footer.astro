@@ -1,21 +1,30 @@
 ---
+import IconLink from './IconLink.astro';
 ---
 
-<footer class="text-sm leading-[1.75] mt-4">
-  <div>
-    This blog is built with 
-    <a
-      class="unset gradient-link tracking-wider font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#f57111] to-[#f79605] hover:after:bg-gradient-to-r hover:after:from-[#f57111] hover:after:to-[#f79605]"
-      href={"https://github.com/flexdinesh/blogster"}
-      target="_blank"
-    >
-      Blogster</a> and hosted in
-    <a
-      class="unset gradient-link tracking-wider font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#00abda] to-[#1476ff] hover:after:bg-gradient-to-r hover:after:from-[#00abda] hover:after:to-[#1476ff]"
-      href={"https://www.netlify.com"}
-      target="_blank"
-    >
-      Netlify</a>.
+<footer class="text-sm leading-[1.75] mt-4">  
+  <div
+    class:list={[
+      'justify-self-center flex items-center content-center',
+      'text-text-bold',
+      'py-2'
+    ]}
+  >
+    <IconLink
+      href="https://www.linkedin.com/in/adam-leis-75018b23/"
+      iconClasses="fa-brands fa-linkedin"
+      iconTitle="Blogster on GitHub"
+    ></IconLink>
+    <IconLink
+      href="https://github.com/Made-of-Clay"
+      iconClasses="fa-brands fa-github"
+      iconTitle="Blogster on GitHub"
+    ></IconLink>
+    <IconLink
+      href="https://x.com/theNthAdam"
+      iconClasses="fa-brands fa-twitter"
+      iconTitle="Dinesh on Twitter"
+    ></IconLink>
   </div>
 </footer>
 
