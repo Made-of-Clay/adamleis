@@ -1,19 +1,23 @@
 ---
 // NOTE: consider customizing this more so I have better control over
 // the switch handle (& can make it fancier)
+const { classes } = Astro.props;
 ---
-
-<input
-    id="theme-toggle"
-    type="checkbox"
-    class:list={[
-        'toggle toggle-primary ',
-        'hover:bg-amber-500',
-        'ml-3',
-        'transition-all'
-    ]}
-    checked
->
+<div class={`flex items-center ${classes}`}>
+    <span class="far fa-sun text-xl"></span>
+    <input
+        id="theme-toggle"
+        type="checkbox"
+        class:list={[
+            'toggle toggle-primary ',
+            'hover:bg-amber-500',
+            'mx-2',
+            'transition-all'
+        ]}
+        checked
+    >
+    <span class="far fa-moon text-xl"></span>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
