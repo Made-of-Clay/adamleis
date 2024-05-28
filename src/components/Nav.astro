@@ -1,15 +1,12 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
+import NavItems from "./NavItems.astro";
 ---
 
 <Fragment>
   <nav class="hidden md:inline">
     <section class="text-text-bold">
-      <ul class="unset flex gap-4 [&>li]:p-0">
-        <li><HeaderLink href="/">Home</HeaderLink></li>
-        <li><HeaderLink href="/blog">Blog</HeaderLink></li>
-        <li><HeaderLink href="/projects">Projects</HeaderLink></li>
-      </ul>
+      <NavItems></NavItems>
     </section>
   </nav>
   <nav class="md:hidden">
@@ -30,11 +27,7 @@ import HeaderLink from "./HeaderLink.astro";
             title="Close mobile menu"></i>
           <span class="fa-sr-only">Close mobile menu</span>
         </button>
-        <ul class="unset flex flex-col text-text-bold gap-4 [&>li]:p-0 px-6">
-          <li><HeaderLink href="/">Home</HeaderLink></li>
-          <li><HeaderLink href="/blog">Blog</HeaderLink></li>
-          <li><HeaderLink href="/projects">Projects</HeaderLink></li>
-        </ul>
+        <NavItems listClasses="flex-col text-text-bold px-6"></NavItems>
       </div>
     </section>
   </nav>
