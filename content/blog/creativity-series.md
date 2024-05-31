@@ -14,6 +14,20 @@ ogImagePath: /images/creativity/series-cover.jpg
     </figcaption>
 </figure>
 
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+
+> Some arrow thing - blockquote?
+
+```js
+const js = 'JavaScript';
+```
+
+This is an `inline` code piece.
+
 This series covers a framework of thinking for the many facets of creativity.
 
 At the beginning of this "project" of sorts, I will begin by outlining the 

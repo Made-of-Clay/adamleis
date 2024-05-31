@@ -1,0 +1,39 @@
+---
+import { readAll, readOne } from "../lib/markdoc/read";
+import { page } from "../lib/markdoc/frontmatter.schema";
+import PageLayout from "../layouts/PageLayout.astro";
+import PageMeta from "../components/PageMeta.astro";
+import { SITE_TITLE } from "../config";
+import BlogPostLink from "src/components/BlogPostLink.astro";
+import Renderer from "src/components/Renderer.astro";
+
+// const posts = await readAll({
+//   directory: "about",
+//   frontmatterSchema: blog,
+// });
+
+// const sortedPosts = posts
+//   .filter((p) => p.frontmatter.draft !== true)
+//   .sort(
+//     (a, b) =>
+//       new Date(b.frontmatter.date).valueOf() -
+//       new Date(a.frontmatter.date).valueOf()
+//   );
+const { content } = await readOne({
+  directory: 'pages',
+  slug: 'about',
+  frontmatterSchema: page,
+});
+---
+
+<PageLayout>
+  <PageMeta title={`Blog | ${SITE_TITLE}`} slot="meta" />
+
+  <section slot="main">
+    <h1 class="font-bold text-text-heading text-center text-4xl md:text-5xl pt-4 pb-2 overflow-hidden">
+      Adam Leis
+    </h1>
+
+    <Renderer content={content} slot="content" />
+  </section>
+</PageLayout>

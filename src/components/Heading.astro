@@ -11,23 +11,33 @@ const { level, children } = Astro.props;
 const headingText = children.length && typeof children[0] === 'string' ? children[0] : '';
 const id = slugify(headingText.toLowerCase());
 
-let Tag: HTMLTag = "h1";
+const tagMap: Record<number, keyof astroHTML.JSX.DefinedIntrinsicElements> = {
+  1: 'h1',
+  2: 'h2',
+  3: 'h3',
+  4: 'h4',
+  5: 'h5',
+  6: 'h6',
+};
+
+const Tag: HTMLTag = tagMap[level];
+let Tag1: HTMLTag = "h1";
 if (level === 2) {
-  Tag = "h2";
+  Tag1 = "h2";
 } else if (level === 3) {
-  Tag = "h3";
+  Tag1 = "h3";
 } else if (level === 4) {
-  Tag = "h4";
+  Tag1 = "h4";
 } else if (level === 5) {
-  Tag = "h5";
+  Tag1 = "h5";
 } else if (level === 6) {
-  Tag = "h6";
+  Tag1 = "h6";
 }
-const shouldAddBeforePseudoStyle = ["h1", "h2"].includes(Tag)
+const shouldAddBeforePseudoStyle = ["h1", "h2"].includes(Tag1)
 ---
 
 <Tag id={id} class="group flex">
-  {
+  <!-- {
     shouldAddBeforePseudoStyle?
     <span class="
       pl-6 relative block leading-[150%]
@@ -39,6 +49,6 @@ const shouldAddBeforePseudoStyle = ["h1", "h2"].includes(Tag)
     <span class="relative block leading-[150%]">
       {children}
     </span>
-  }
-  
+  } -->
+  {children}
 </Tag>
