@@ -1,15 +1,7 @@
 ---
-import PageMeta from "../components/PageMeta.astro";
-import PageLayout from "../layouts/PageLayout.astro";
-import Intro from "../components/Intro.astro";
-import AboutTheTheme from "../components/AboutTheTheme.astro";
-import { SITE_TITLE } from "../config";
+import SiteShell from "src/components/SiteShell.astro";
 ---
 
-<PageLayout>
-  <PageMeta title={SITE_TITLE} slot="meta" />
-  <Fragment slot="main">
-    <Intro />
-    <AboutTheTheme />
-  </Fragment>
-</PageLayout>
+<SiteShell title="Home Page">
+    This is my test content for the home page.
+</SiteShell>

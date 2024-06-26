@@ -1,3 +1,11 @@
+---
+external: false
+draft: false
+title: Sensation: Preliminary Meditations
+description: Musings on the meaning of sensation and what senses are.
+date: 2024-05-21
+---
+
 # Sensation: Preliminary Meditations
 
 What is sensation? What does it mean to "sense" something? What components are involved? I plan to study this in the broadest possible sense (no pun intended) to explore the common uses and what phenomenon they try to describe; then I plan to assess how the common termonology maps to somewhat less common uses and analize how well it transfers.
