@@ -9,10 +9,13 @@
   (function () {
     if (typeof window !== "undefined") {
       const isSystemColorSchemeDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
+        "(prefers-color-scheme: dark)",
       ).matches;
       const storageTheme = sessionStorage.getItem("theme");
-      if ((!storageTheme && isSystemColorSchemeDark) || storageTheme === "dark") {
+      if (
+        (!storageTheme && isSystemColorSchemeDark) ||
+        storageTheme === "dark"
+      ) {
         document.documentElement.classList.add("dark");
         document.head.children.namedItem("theme-color").content = "#0f172a";
       } else {

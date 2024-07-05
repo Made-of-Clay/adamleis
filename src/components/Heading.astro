@@ -1,23 +1,24 @@
 ---
-import slugify from 'slugify';
-import type { HTMLAttributes, HTMLTag } from 'astro/types'
+import slugify from "slugify";
+import type { HTMLAttributes, HTMLTag } from "astro/types";
 
-interface Props extends HTMLAttributes<'h1'> {
+interface Props extends HTMLAttributes<"h1"> {
   level: 1 | 2 | 3 | 4 | 5 | 6;
   children: any;
 }
 
 const { level, children } = Astro.props;
-const headingText = children.length && typeof children[0] === 'string' ? children[0] : '';
+const headingText =
+  children.length && typeof children[0] === "string" ? children[0] : "";
 const id = slugify(headingText.toLowerCase());
 
 const tagMap: Record<number, keyof astroHTML.JSX.DefinedIntrinsicElements> = {
-  1: 'h1',
-  2: 'h2',
-  3: 'h3',
-  4: 'h4',
-  5: 'h5',
-  6: 'h6',
+  1: "h1",
+  2: "h2",
+  3: "h3",
+  4: "h4",
+  5: "h5",
+  6: "h6",
 };
 
 const Tag: HTMLTag = tagMap[level];
@@ -33,7 +34,7 @@ if (level === 2) {
 } else if (level === 6) {
   Tag1 = "h6";
 }
-const shouldAddBeforePseudoStyle = ["h1", "h2"].includes(Tag1)
+const shouldAddBeforePseudoStyle = ["h1", "h2"].includes(Tag1);
 ---
 
 <Tag id={id} class="group flex">

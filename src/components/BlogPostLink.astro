@@ -1,23 +1,17 @@
 ---
-import { formatDesc } from 'src/helpers/formatDesc'
+import { formatDesc } from "src/helpers/formatDesc";
 
 export interface Props {
-  title: string
-  description?: string
-  publishDate: string
-  rawDate: Date
-  pagePath?: string
-  externalUrl?: string
+  title: string;
+  description?: string;
+  publishDate: string;
+  rawDate: Date;
+  pagePath?: string;
+  externalUrl?: string;
 }
 
-const {
-  title,
-  description,
-  publishDate,
-  rawDate,
-  pagePath,
-  externalUrl,
-} = Astro.props;
+const { title, description, publishDate, rawDate, pagePath, externalUrl } =
+  Astro.props;
 
 const postDesc = formatDesc(description);
 ---
@@ -25,7 +19,7 @@ const postDesc = formatDesc(description);
 <div class="title">
   <a
     href={externalUrl ? externalUrl : pagePath}
-    target={externalUrl ? '_blank' : '_self'}
+    target={externalUrl ? "_blank" : "_self"}
     class:list={[
       "unset",
       "transition-[background-size] duration-300 ",
@@ -34,21 +28,27 @@ const postDesc = formatDesc(description);
       "from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue",
     ]}
   >
-    {externalUrl && (
-      <div>
-        <strong>{title}</strong>
-        {postDesc && <span>&mdash; {postDesc}</span>}
-      </div>
-      <span>
-        <i class="ml-1 mr-1 text-[12px] pb-2 fa-solid fa-up-right-from-square" />
-      </span>
-    )}
-    {!externalUrl && (
-      <div>
-        <strong>{title}</strong>
-        {postDesc && <span>&mdash; {postDesc}</span>}
-      </div>
-    )}
+    {
+      externalUrl && (
+        <>
+          <div>
+            <strong>{title}</strong>
+            {postDesc && <span>&mdash; {postDesc}</span>}
+          </div>
+          <span>
+            <i class="ml-1 mr-1 text-[12px] pb-2 fa-solid fa-up-right-from-square" />
+          </span>
+        </>
+      )
+    }
+    {
+      !externalUrl && (
+        <div>
+          <strong>{title}</strong>
+          {postDesc && <span>&mdash; {postDesc}</span>}
+        </div>
+      )
+    }
   </a>
 </div>
 

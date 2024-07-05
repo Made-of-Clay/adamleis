@@ -1,5 +1,7 @@
 ---
+
 ---
+
 <mode-toggle class="flex">
   <button
     class="justify-self-end bg-black dark:bg-white ml-4 inline-flex h-6 w-11 items-center rounded-full"
@@ -21,11 +23,12 @@
 
 <script>
   function updateHTMLTheme(mode: "light" | "dark") {
-    const themeColorMetaTag = document.head
-      .querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+    const themeColorMetaTag = document.head.querySelector<HTMLMetaElement>(
+      'meta[name="theme-color"]',
+    );
 
-    const darkTheme = 'night';
-    const lightTheme = 'fantasy';
+    const darkTheme = "night";
+    const lightTheme = "fantasy";
     if (mode === "dark") {
       document.documentElement.classList.remove("light");
       document.documentElement.classList.add("dark");

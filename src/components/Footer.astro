@@ -1,36 +1,35 @@
 ---
-import IconLink from './IconLink.astro';
+import IconLink from "./IconLink.astro";
 ---
 
-<footer class="text-sm leading-[1.75] mt-4">  
+<footer class="text-sm leading-[1.75] mt-4">
   <div
     class:list={[
-      'justify-self-center flex items-center content-center',
-      'text-text-bold',
-      'py-2'
+      "justify-self-center flex items-center content-center",
+      "text-text-bold",
+      "py-2",
     ]}
   >
     <IconLink
       href="https://www.linkedin.com/in/adam-leis-75018b23/"
       iconClasses="fa-brands fa-linkedin"
       iconTitle="Blogster on GitHub"
-    ></IconLink>
+    />
     <IconLink
       href="https://github.com/Made-of-Clay"
       iconClasses="fa-brands fa-github"
       iconTitle="Blogster on GitHub"
-    ></IconLink>
+    />
     <IconLink
       href="https://x.com/theNthAdam"
       iconClasses="fa-brands fa-twitter"
       iconTitle="Dinesh on Twitter"
-    ></IconLink>
+    />
   </div>
 </footer>
 
 <style>
   footer {
-    grid-area: footer;
     text-align: center;
     display: flex;
     align-items: center;

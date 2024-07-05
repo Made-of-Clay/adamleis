@@ -20,8 +20,8 @@ import Renderer from "src/components/Renderer.astro";
 //       new Date(a.frontmatter.date).valueOf()
 //   );
 const { content } = await readOne({
-  directory: 'pages',
-  slug: 'about',
+  directory: "pages",
+  slug: "about",
   frontmatterSchema: page,
 });
 ---
@@ -30,7 +30,9 @@ const { content } = await readOne({
   <PageMeta title={`Blog | ${SITE_TITLE}`} slot="meta" />
 
   <section slot="main">
-    <h1 class="font-bold text-text-heading text-center text-4xl md:text-5xl pt-4 pb-2 overflow-hidden">
+    <h1
+      class="font-bold text-text-heading text-center text-4xl md:text-5xl pt-4 pb-2 overflow-hidden"
+    >
       Adam Leis
     </h1>
 

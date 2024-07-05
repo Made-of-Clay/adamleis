@@ -10,3 +10,10 @@ date: 2024-05-29
 # About Me
 
 This is my content.
+
+```json
+{
+  "test": "JSON",
+  "rocks": true
+}
+```

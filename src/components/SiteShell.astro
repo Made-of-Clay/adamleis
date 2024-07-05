@@ -1,11 +1,13 @@
 ---
-import '../styles/global.css'
-import HeaderLink from './HeaderLink.astro';
+// import '../styles/global.css'
+import "simpledotcss/simple.min.css";
+import "@/styles/global.css";
+import HeaderLink from "./HeaderLink.astro";
 import GoogleFont from "./GoogleFont.astro";
 import FontAwesome from "./FontAwesome.astro";
 // import ThemeScript from "./ThemeScript.astro";
-import Nav from './Nav.astro'
-import Footer from './Footer.astro';
+import Nav from "./Nav.astro";
+import Footer from "./Footer.astro";
 const { title } = Astro.props;
 ---
 
@@ -15,7 +17,7 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#ffffff" />
-    
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <title>{title} | Adam Leis</title>
@@ -29,28 +31,37 @@ const { title } = Astro.props;
         const themeColor = {
           dark: "#0f172a",
           light: "#ffffff",
-        }
+        };
         const isSystemColorSchemeDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
+          "(prefers-color-scheme: dark)",
         ).matches;
         const storageTheme = sessionStorage.getItem("theme");
-        if ((!storageTheme && isSystemColorSchemeDark) || storageTheme === "dark") {
+        if (
+          (!storageTheme && isSystemColorSchemeDark) ||
+          storageTheme === "dark"
+        ) {
           document.documentElement.classList.add("dark");
-          document.head.children.namedItem("theme-color").content = themeColor.dark;
+          document.head.children.namedItem("theme-color").content =
+            themeColor.dark;
         } else {
           // we already server-render light theme
-          document.head.children.namedItem("theme-color").content = themeColor.light;
+          document.head.children.namedItem("theme-color").content =
+            themeColor.light;
         }
       }
     </script>
   </head>
   <body>
-     <nav class="navbar gap-4 bg-base-100">
-       <HeaderLink href="/about">About</HeaderLink>
-       <HeaderLink href="/blog">Blog</HeaderLink>
-     </nav>
+    <header>
+      <nav class="navbar gap-4 bg-base-100">
+        <HeaderLink href="/about">About</HeaderLink>
+        <HeaderLink href="/blog">Blog</HeaderLink>
+      </nav>
+    </header>
 
-    <slot />
+    <main>
+      <slot />
+    </main>
 
     <Footer />
   </body>

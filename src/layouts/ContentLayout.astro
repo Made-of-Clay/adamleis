@@ -5,7 +5,7 @@
 */
 
 // Import the global.css file here so that it is included on
-import "../styles/global.css";
+// import "../styles/global.css";
 
 import GoogleFont from "./GoogleFont.astro";
 import FontAwesome from "./FontAwesome.astro";
@@ -27,7 +27,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-us", {
 });
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="night">
   <head>
     <!-- Global Metadata -->
@@ -41,18 +41,18 @@ const formattedDate = new Date(date).toLocaleDateString("en-us", {
     <FontAwesome />
   </head>
 
-  <body
-    class="max-w-3xl mx-auto min-h-screen px-6 sm:px-8"
-  >
+  <body class="max-w-3xl mx-auto min-h-screen px-6 sm:px-8">
     <Header />
 
     <main id="main">
       <section class="blog-post prose max-w-none prose-bubblegum">
         <h1 class="m-0 mb-[0.25em]">
-          <span class:list={[
-            'relative block leading-[150%]',
-            "after:absolute after:content-[''] after:w-2 after:h-full after:top-0 after:left-0 after:bg-primary-green",
-          ]}>
+          <span
+            class:list={[
+              "relative block leading-[150%]",
+              "after:absolute after:content-[''] after:w-2 after:h-full after:top-0 after:left-0 after:bg-primary-green",
+            ]}
+          >
             {title}
           </span>
         </h1>
@@ -63,7 +63,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-us", {
 
     <Footer />
 
-    <style>
+    <!-- <style>
       body {
         display: grid;
         grid-template-areas:
@@ -76,6 +76,6 @@ const formattedDate = new Date(date).toLocaleDateString("en-us", {
       main {
         grid-area: main;
       }
-    </style>
+    </style> -->
   </body>
 </html>

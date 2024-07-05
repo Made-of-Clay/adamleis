@@ -10,8 +10,8 @@ While semantic Versioning (semver) is primarily used for software versioning, it
 
 ## Semver in Software
 
-1. **Major:** *incompatible changes* are made in the software, such as major feature additions or changes that may break backward compatibility.
-2. **Minor:** *backward-compatible functionality* is added to the software, such as new features or enhancements.
+1. **Major:** _incompatible changes_ are made in the software, such as major feature additions or changes that may break backward compatibility.
+2. **Minor:** _backward-compatible functionality_ is added to the software, such as new features or enhancements.
 3. **Patch:** backward-compatible bug fixes or adjustments (e.g., text changes) are applied to the software.
 
 You can [read more about these and other details](https://semver.org/), but this is sufficient for now.
@@ -26,4 +26,3 @@ Software version tracking is useful for the consumers of that software. The same
 # TODO add apple brand style guide image here
 <figcaption>Taken from <a href="https://www.apple.com/legal/sales-support/certification/docs/logo_guidelines.pdf">Apple Identity Guidelines</a></figcaption>
 </figure>
-

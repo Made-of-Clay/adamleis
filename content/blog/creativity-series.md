@@ -23,16 +23,16 @@ ogImagePath: /images/creativity/series-cover.jpg
 > Some arrow thing - blockquote?
 
 ```js
-const js = 'JavaScript';
+const js = "JavaScript";
 ```
 
 This is an `inline` code piece.
 
 This series covers a framework of thinking for the many facets of creativity.
 
-At the beginning of this "project" of sorts, I will begin by outlining the 
+At the beginning of this "project" of sorts, I will begin by outlining the
 framework and its parts, then I will explore ways that it can be applied to both
 the common and the less-obvious domains of creativity.
 
-I also intend to steel-man arguments *against* the view in an effort to test it
+I also intend to steel-man arguments _against_ the view in an effort to test it
 and identify its weaknesses (in an effort to identify how it can be bolstered).

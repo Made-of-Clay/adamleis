@@ -1,6 +1,7 @@
 # Creativity Notes
 
 Initial framework:
+
 - **craft**: the process of how to make something (e.g. mixing paint, writing sheet music, writing words in a poem)
 - **design**: the process of organizing the components of the work in an aesthetically pleasing manner
 - **art**: the process of imbuing the work with meaning, purpose, and/or value
@@ -9,7 +10,7 @@ Initial framework:
 
 - How does this framework fit with other uses of the term "creative"? (e.g. entrepreneurial, technical, generic problem-solving [think "MacGyver"])
 - How do other frameworks like Aristotle's Modes of Persuasion or Four Causes compare and help readers understand what the framework is trying to do?
-- How does the *art* portion handle the wild subjectivity of art that's common today?
+- How does the _art_ portion handle the wild subjectivity of art that's common today?
 - What is the thesis?
 - What sets this view apart from others? (What are other views?)
 - What examples can I give to illustrate the utility of the framework?
@@ -40,6 +41,7 @@ Initial framework:
 5. Conclusion
 
 Remember:
+
 - use formatting
 - use lists (summarizing bullet points)
 - use visuals w/ captions
@@ -50,25 +52,25 @@ Remember:
 Google Bard response to the framework:
 
 > I think the three-part framework for thinking of creativity is a helpful way to understand the different aspects of creative work. Craft, design, and art are all important elements of creativity, and they can work together to create something that is both beautiful and meaningful.
-> 
+>
 > **Craft** is the technical process by which some work is created. It involves the skills and knowledge that are necessary to create a work of art, such as the ability to use tools and materials, or the ability to follow instructions. Craft is important because it allows artists to express their ideas in a clear and concise way.
-> 
+>
 > **Design** is the process of making some work aesthetically pleasing. It involves the use of color, shape, form, and texture to create a work that is visually appealing. Design is important because it helps to communicate the artist's message in a way that is both visually and emotionally engaging.
-> 
+>
 > **Art** is the process of imbuing some work with meaning or communicating a message. It involves the use of symbols, metaphors, and other devices to create a work that is both intellectually and emotionally stimulating. Art is important because it allows artists to explore the human condition and to share their insights with others.
-> 
+>
 > The three-part framework for thinking of creativity can be used to understand any type of creative work, from painting and sculpture to music and literature. It is a helpful way to think about the different elements that contribute to a creative work, and it can help us to appreciate the skill and artistry that goes into creating something beautiful and meaningful.
-> 
+>
 > Here are some strengths and weaknesses of the three-part framework for thinking of creativity:
-> 
+>
 > **Strengths**:
-> 
+>
 > The framework is simple and easy to understand.
 > It can be used to understand any type of creative work.
 > It can help us to appreciate the skill and artistry that goes into creating something beautiful and meaningful.
-> 
+>
 > **Weaknesses**:
-> 
+>
 > The framework may be too simplistic for some types of creative work.
 >
 > It may not be able to account for all of the factors that contribute to creativity.
@@ -78,7 +80,7 @@ Google Bard response to the framework:
 > Overall, the three-part framework for thinking of creativity is a helpful tool for understanding the different aspects of creative work. However, it is important to be aware of its limitations.
 >
 > Here are some tips on how to get your idea to more people in a constructive way:
-> 
+>
 > Start by identifying your audience. Who are you trying to reach with your idea? Once you know who you're trying to reach, you can tailor your message accordingly.
 >
 > Be clear and concise. When you're trying to get your idea across to a large audience, it's important to be clear and concise. Avoid using jargon or technical terms that your audience may not understand.
@@ -90,7 +92,7 @@ Google Bard response to the framework:
 > Be open to feedback. Once you've shared your idea with others, be open to their feedback. This feedback can help you improve your idea and make it more appealing to a wider audience.
 >
 > Here are some specific ways to get your idea to more people:
-> 
+>
 > Write a blog post or article. This is a great way to share your idea with a large audience. Make sure to write in a clear and concise way, and use visuals to illustrate your points.
 >
 > Give a presentation. This is a great way to share your idea with a group of people in person. Be sure to practice your presentation beforehand, and make sure to engage with your audience.

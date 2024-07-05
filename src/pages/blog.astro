@@ -16,36 +16,42 @@ const sortedPosts = posts
   .sort(
     (a, b) =>
       new Date(b.frontmatter.date).valueOf() -
-      new Date(a.frontmatter.date).valueOf()
+      new Date(a.frontmatter.date).valueOf(),
   );
 ---
 
 <PageLayout>
   <PageMeta title={`Blog | ${SITE_TITLE}`} slot="meta" />
-  
+
   <section slot="main">
-    <h1 class="font-bold text-text-heading text-center text-4xl md:text-5xl pt-4 pb-2 overflow-hidden">
+    <h1
+      class="font-bold text-text-heading text-center text-4xl md:text-5xl pt-4 pb-2 overflow-hidden"
+    >
       Adam Leis
     </h1>
     <ul>
       {
         sortedPosts.map((post) => {
           const formattedDate = new Date(
-            post.frontmatter.date
-          ).toLocaleDateString('en-us', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
+            post.frontmatter.date,
+          ).toLocaleDateString("en-us", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
           });
           return (
             <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
               <BlogPostLink
                 title={post.frontmatter.title}
-                description={post.frontmatter.external ? "" : post.frontmatter.description}
+                description={
+                  post.frontmatter.external ? "" : post.frontmatter.description
+                }
                 publishDate={formattedDate}
                 rawDate={post.frontmatter.date}
                 pagePath={`/blog/${post.slug}`}
-                externalUrl={post.frontmatter.external ? post.frontmatter.url : ""}
+                externalUrl={
+                  post.frontmatter.external ? post.frontmatter.url : ""
+                }
               />
             </li>
           );

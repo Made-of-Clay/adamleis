@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.astro'],
-  darkMode: 'class',
+  content: ["./src/**/*.astro"],
+  darkMode: "class",
   // theme: {
   //   extend: {
   //     fontFamily: {
@@ -113,13 +113,7 @@ module.exports = {
   //   },
   // },
   daisyui: {
-    themes: [
-      'fantasy',
-      'night',
-    ],
+    themes: ["fantasy", "night"],
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('daisyui')
-  ],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
 };

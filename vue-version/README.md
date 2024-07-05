@@ -8,7 +8,7 @@ A critical lesson that I have learned while in web is that there is always more 
 
 This source was originally built using an older version of `vue-cli`. The following notes have been preserved for personal reference.
 
-``` bash
+```bash
 # install dependencies
 npm install
 
