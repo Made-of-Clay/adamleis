@@ -1,4 +1,8 @@
 :root {
+    /* Simple.CSS Overrides */
+    --accent: var(--emerald-500);
+    --accent-hover: var(--emerald-300);
+
     /* Shared Spacing (e.g. margin: var(--spacing-4);) */
     --spacing-1: 0.25rem;
     --spacing-2: 0.5rem;
@@ -279,4 +283,14 @@
     --rose-800: #9f1239;
     --rose-900: #881337;
     --rose-950: #4c0519;
+}
+
+a {
+    border-bottom: 1px solid;
+    transition: all 0.15s;
+    text-decoration: none;
+}
+a:hover {
+    border-bottom-color: transparent;
+    color: var(--accent-hover);
 }

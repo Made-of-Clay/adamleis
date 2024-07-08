@@ -29,8 +29,6 @@
   },
   "devDependencies": {
     "daisyui": "^4.11.1",
-    "prettier": "^3.3.2",
-    "prettier-plugin-astro": "^0.14.0",
     "typescript": "^4.9.4"
   }
 }

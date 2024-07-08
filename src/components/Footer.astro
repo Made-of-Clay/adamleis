@@ -1,15 +1,9 @@
 ---
-import IconLink from "./IconLink.astro";
+import IconLink from './IconLink.astro';
 ---
 
-<footer class="text-sm leading-[1.75] mt-4">
-  <div
-    class:list={[
-      "justify-self-center flex items-center content-center",
-      "text-text-bold",
-      "py-2",
-    ]}
-  >
+<footer id="bottom" class="text-sm leading-[1.75] mt-4">
+  <div>
     <IconLink
       href="https://www.linkedin.com/in/adam-leis-75018b23/"
       iconClasses="fa-brands fa-linkedin"
@@ -36,7 +30,7 @@ import IconLink from "./IconLink.astro";
     justify-content: center;
   }
 
-  .gradient-link {
+  /* .gradient-link {
     position: relative;
     box-decoration-break: clone;
     text-decoration: none;
@@ -56,5 +50,5 @@ import IconLink from "./IconLink.astro";
     transform: translateZ(0) scaleX(0);
     transform-origin: left center;
     transition: all 0.15s ease-in-out;
-  }
+  } */
 </style>

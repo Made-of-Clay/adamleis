@@ -3,7 +3,7 @@
 
 export const SITE_TITLE = "Adam Leis";
 export const SITE_DESCRIPTION =
-  "Welcome to my blog! I write about my polymath adventures, which includes web development, philosophy, theology, apologetics, science, and more.";
+  "Welcome to my blog! I write about my (aspiring) polymath adventures, which includes web development, philosophy, theology, apologetics, science, and more.";
 export const TWITTER_HANDLE = "@theNthAdam";
 export const MY_NAME = "Adam";
 
