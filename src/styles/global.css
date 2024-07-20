@@ -294,3 +294,6 @@ a:hover {
     border-bottom-color: transparent;
     color: var(--accent-hover);
 }
+article > h1:first-child {
+    margin-top: 0;
+}

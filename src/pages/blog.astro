@@ -1,62 +1,34 @@
 ---
-import { readAll } from "../lib/markdoc/read";
+// import { readAll } from "../lib/markdoc/read";
 import { blog } from "../lib/markdoc/frontmatter.schema";
 import PageLayout from "../layouts/PageLayout.astro";
-import PageMeta from "../components/PageMeta.astro";
-import { SITE_TITLE } from "../config";
-import BlogPostLink from "src/components/BlogPostLink.astro";
+// import PageMeta from "../components/PageMeta.astro";
+import { SITE_TITLE } from "@/config";
+import SiteShell from "@/components/SiteShell.astro";
+import { getCollection } from "astro:content";
 
-const posts = await readAll({
-  directory: "blog/**",
-  frontmatterSchema: blog,
-});
-
-const sortedPosts = posts
-  .filter((p) => p.frontmatter.draft !== true)
-  .sort(
-    (a, b) =>
-      new Date(b.frontmatter.date).valueOf() -
-      new Date(a.frontmatter.date).valueOf(),
-  );
+const allPosts = await getCollection('blog');
+// const shallowPosts = allPosts
+    // .filter(post => !post.slug.includes('/'))
+    // .map(post => post)
+    //     params: {
+    //         collection: post.slug.split('/')[0],
+    //         slug: post.slug.split('/')[1],
+    //     },
+    //     props: { post },
+    // }));
 ---
 
-<PageLayout>
-  <PageMeta title={`Blog | ${SITE_TITLE}`} slot="meta" />
+<SiteShell title="Blog" page="blog">
+    <script is:inline define:vars={{allPosts}}>
+        console.log(allPosts)
+    </script>
 
-  <section slot="main">
-    <h1
-      class="font-bold text-text-heading text-center text-4xl md:text-5xl pt-4 pb-2 overflow-hidden"
-    >
-      Adam Leis
-    </h1>
-    <ul>
-      {
-        sortedPosts.map((post) => {
-          const formattedDate = new Date(
-            post.frontmatter.date,
-          ).toLocaleDateString("en-us", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-          });
-          return (
-            <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
-              <BlogPostLink
-                title={post.frontmatter.title}
-                description={
-                  post.frontmatter.external ? "" : post.frontmatter.description
-                }
-                publishDate={formattedDate}
-                rawDate={post.frontmatter.date}
-                pagePath={`/blog/${post.slug}`}
-                externalUrl={
-                  post.frontmatter.external ? post.frontmatter.url : ""
-                }
-              />
-            </li>
-          );
-        })
-      }
-    </ul>
-  </section>
-</PageLayout>
+    {allPosts.map(post =>
+        <article>
+            <h1>{post.data.title}</h1>
+            <p>{post.data.description}</p>
+            <a href={`/blog/${post.slug}`}>Read</a>
+        </article>
+    )}
+</SiteShell>

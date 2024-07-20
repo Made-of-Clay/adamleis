@@ -1,0 +1,36 @@
+---
+import SiteShell from '@/components/SiteShell.astro';
+import { getEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+    const allBlogs = await getCollection('blog');
+    const data = allBlogs
+        .filter(post => post.slug.includes('/'))
+        .map(post => ({
+            params: {
+                collection: post.slug.split('/')[0],
+                slug: post.slug.split('/')[1],
+            },
+            props: { post },
+        }));
+    console.log(data.map(d => d.params))
+
+    return data;
+}
+
+// const { collection, slug } = Astro.params;
+const { post } = Astro.props;
+
+const { Content } = await post.render();
+// const thePost = await getEntry(collection, slug);
+---
+
+<SiteShell>
+    <script is:inline define:vars={{post}}>
+        console.log(post)
+    </script>
+    <article>
+        <Content />
+    </article>
+</SiteShell>

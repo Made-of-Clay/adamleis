@@ -1,0 +1,12 @@
+---
+const { title, description, url } = Astro.props;
+---
+
+<article>
+    <h3>{title}</h3>
+    {(description ?? '') && (
+        <p>{description}</p>
+    )}
+    {/* TODO figure out how to link to the blog article */}
+    <a href={url ?? '#missing-url'}>Read more</a>
+</article>

@@ -1,9 +1,11 @@
 ---
 external: false
 draft: true
-title: Creativity: Three-Part Framework
-description: desc # TODO generate a good description
-date: 2022-11-05 # TODO update this date
+title: 'Creativity: Three-Part Framework'
+# TODO generate a good description
+description: desc
+# TODO update this date
+date: 2022-11-05
 ---
 
 In an effort to try and categorize the sometimes nebulous and ever-shifting definition of creative works, I've developed a three-part framework for considering creative works. This series is designed to help me **test my assumptions and the utility of the framework** in a variety of creative disciplines.

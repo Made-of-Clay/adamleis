@@ -1,7 +1,7 @@
 ---
 const years = new Date().getFullYear() - 2010;
 const { class: classes } = Astro.props;
-import * as about from '../../content/home/about.md';
+import * as about from '../content/home/about.md';
 
 const content = about.compiledContent().replace('{years}', `${years}`);
 ---

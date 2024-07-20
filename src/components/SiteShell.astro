@@ -51,7 +51,7 @@ const { title, page } = Astro.props;
   <body>
     <header>
         <!-- TODO build one of the logo monogram ideas -->
-        <b>Adam Leis</b>
+        <a id="homeLink" href="/">Adam Leis</a>
 
         <nav id="siteNav">
             <HeaderLink href="/#about-me">About</HeaderLink>
@@ -82,5 +82,10 @@ header {
 }
 #siteNav {
     margin-block-start: 0;
+}
+#homeLink {
+  border-bottom: none;
+  color: inherit;
+  font-weight: bold;
 }
 </style>
