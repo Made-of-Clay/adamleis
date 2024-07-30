@@ -5,6 +5,7 @@ function handleExternalLinks(event) {
 }
 
 document.querySelectorAll('a[href]').forEach((link) => {
-    if (link.href.substring(0, location.origin.length) !== location.origin)
+    const isExternal = link.href.substring(0, location.origin.length) !== location.origin;
+    if (isExternal && !link.getAttribute('target'))
         link.addEventListener('click', handleExternalLinks);
 });
