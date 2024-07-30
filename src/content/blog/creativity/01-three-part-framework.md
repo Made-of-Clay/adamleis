@@ -30,8 +30,6 @@ Here is the initial framework:
 
 The combo of "arts and crafts" conjures mental images of Hobby Lobby and Jo-Ann Fabrics. A looser definition of the term "art" will include some paintings for sale, and several books on Bob Ross _plein air_ painting instruction books.
 
-![Bob Ross - Joy of Painting](../bob-ross-joy-of-painting.jpg)
-
 However, I'm proposing this only scratches (pun intended) at the craft of creative works. It deals with the _how-to_ of painting, drawing, sculpting, and modeling.
 
 This is not derisive towards craft. It is an essential part of generating creative work. Without the craft, there is nothing to observe.
