@@ -13,13 +13,5 @@ const postsToShow = await getRecentPosts();
             description={post.data.description ?? ''}
             url={`/blog/${post.slug}`}
         />
-        // <article>
-        //     <h3>{post.data.title}</h3>
-        //     {(post.data.description ?? '') && (
-        //         <p>{post.data.description}</p>
-        //     )}
-        //     {/* TODO figure out how to link to the blog article */}
-        //     {/* <a href={post.url}>Read more</a> */}
-        // </article>
     ))}
 </section>
