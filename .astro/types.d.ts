@@ -170,6 +170,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: any
 } & { render(): Render[".md"] };
+"msw-reminder.md": {
+	id: "msw-reminder.md";
+  slug: "msw-reminder";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
 "sense/senseation-meditations.md": {
 	id: "sense/senseation-meditations.md";
   slug: "sense/senseation-meditations";
