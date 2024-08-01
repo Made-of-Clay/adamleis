@@ -1,6 +1,6 @@
 ---
 external: false
-draft: false
+draft: true
 title: Generative AI Correctness
 description: meh # TODO generate a good description
 date: 2022-11-05 # TODO update this date
