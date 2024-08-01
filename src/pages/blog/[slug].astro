@@ -1,5 +1,6 @@
 ---
 import SiteShell from '@/components/SiteShell.astro';
+import TimeTag from '@/components/TimeTag.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -18,10 +19,13 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 
 const { Content } = await post.render();
+
+const title = post.data?.title ? post.data?.title : '';
 ---
 
-<SiteShell>
+<SiteShell title={title}>
     <article data-tpl="[slug]">
+        {post.data.date && <TimeTag date={post.data.date}></TimeTag>}
         <Content />
     </article>
 </SiteShell>

@@ -1,5 +1,6 @@
 ---
-const { title, description, url } = Astro.props;
+import TimeTag from '@/components/TimeTag.astro';
+const { title, description, url, date } = Astro.props;
 ---
 
 <article>
@@ -7,6 +8,15 @@ const { title, description, url } = Astro.props;
     {(description ?? '') && (
         <p>{description}</p>
     )}
-    {/* TODO figure out how to link to the blog article */}
-    <a href={url ?? '#missing-url'}>Read more</a>
+    <footer>
+        <a href={url}>Read</a>
+        {date && <TimeTag date={date}></TimeTag>}
+    </footer>
 </article>
+
+<style>
+footer {
+    display: flex;
+    justify-content: space-between;
+}
+</style>
