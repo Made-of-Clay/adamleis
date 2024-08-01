@@ -5,7 +5,9 @@ import HeaderLink from './HeaderLink.astro';
 import GoogleFont from './GoogleFont.astro';
 import FontAwesome from './FontAwesome.astro';
 import Footer from './Footer.astro';
+
 const { title, page } = Astro.props;
+const docTitle = (title === 'Home Page' || !title) ? '' : `${title} | `
 ---
 
 <html data-theme="night" lang="en">
@@ -17,7 +19,7 @@ const { title, page } = Astro.props;
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <title>{title} | Adam Leis</title>
+    <title>{docTitle} Adam Leis</title>
 
     <GoogleFont />
     <FontAwesome />
