@@ -1,34 +1,39 @@
 ---
-// import { readAll } from "../lib/markdoc/read";
-import { blog } from "../lib/markdoc/frontmatter.schema";
-import PageLayout from "../layouts/PageLayout.astro";
-// import PageMeta from "../components/PageMeta.astro";
-import { SITE_TITLE } from "@/config";
+import BlogPost from "@/components/BlogPost.astro";
 import SiteShell from "@/components/SiteShell.astro";
 import { getCollection } from "astro:content";
 
 const allPosts = await getCollection('blog');
-// const shallowPosts = allPosts
-    // .filter(post => !post.slug.includes('/'))
-    // .map(post => post)
-    //     params: {
-    //         collection: post.slug.split('/')[0],
-    //         slug: post.slug.split('/')[1],
-    //     },
-    //     props: { post },
-    // }));
+const sortedPosts = allPosts
+    .filter(post => post.data.draft === false)
+    .sort((a, b) => {
+        console.log('a.data.date', a.data.date, 'b.data.date', b.data.date)
+        const aTime = a.data.date instanceof Date ? a.data.date : 0;
+        const bTime = b.data.date instanceof Date ? b.data.date : 0;
+        return aTime < bTime
+            ? -1
+            : aTime === bTime ? 0 : 1;
+    })
+    .reverse();
 ---
 
 <SiteShell title="Blog" page="blog">
-    <script is:inline define:vars={{allPosts}}>
-        console.log(allPosts)
-    </script>
+    <p>
+        So this has been a long-time coming. I've been writing misc. blog posts for a while, and I rarely publish them. This is my attempt to do better.
+    </p>
 
-    {allPosts.map(post =>
-        <article>
-            <h1>{post.data.title}</h1>
-            <p>{post.data.description}</p>
-            <a href={`/blog/${post.slug}`}>Read</a>
-        </article>
+    <p>
+        As with all web developer personal sites and blogs, this is a near-constant WIP. I'm going to make many mistakes, often silly ones. Such is dev life. Hit me up on X or LinkedIn to tease me, if something has helped, or even just to chat.
+    </p>
+
+    <p>Thanks for visiting!</p>
+    
+    {sortedPosts.map(post =>
+        <BlogPost
+            title={post.data.title}
+            description={post.data.description}
+            url={`/blog/${post.slug}`}
+            date={post.data.date}
+        ></BlogPost>
     )}
 </SiteShell>
