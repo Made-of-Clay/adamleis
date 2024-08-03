@@ -1,0 +1,73 @@
+---
+import 'simpledotcss/simple.min.css';
+import '@/styles/global.css';
+import HeaderLink from './HeaderLink.astro';
+import GoogleFont from './GoogleFont.astro';
+import FontAwesome from './FontAwesome.astro';
+import Footer from './Footer.astro';
+
+const { title, page } = Astro.props;
+const docTitle = (title === 'Home Page' || !title) ? '' : `${title} | `
+---
+
+<html data-theme="night" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>{docTitle} Adam Leis</title>
+
+    <GoogleFont />
+    <FontAwesome />
+
+    <script is:inline type="module" src="/main.js"></script>
+  </head>
+  <body>
+    <header>
+        <!-- TODO build one of the logo monogram ideas -->
+        <a id="homeLink" href="/">Adam Leis</a>
+
+        <nav id="siteNav">
+            <HeaderLink href="/#about-me">About</HeaderLink>
+            <HeaderLink href="/blog">Blog</HeaderLink>
+        </nav>
+    </header>
+
+    <main data-page={page}>
+      <slot />
+    </main>
+
+    <Footer />
+    
+    <script type="module" src="/google-analytics.js"></script>
+  </body>
+</html>
+
+<style>
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    position: sticky;
+    text-align: right;
+    top: 0;
+
+    > b {
+        font-size: 1.5rem;
+    }
+}
+#siteNav {
+    margin-block-start: 0;
+}
+#homeLink {
+  border-bottom: none;
+  color: inherit;
+  font-weight: bold;
+}
+</style>

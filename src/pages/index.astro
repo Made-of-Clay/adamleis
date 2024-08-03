@@ -1,0 +1,16 @@
+---
+import SiteShell from 'src/components/SiteShell.astro';
+import HomeAbout from '@/components/HomeAbout.astro';
+import HomeBlog from '@/components/HomeBlog.astro';
+import * as welcome from '@/content/home/welcome.md';
+---
+
+<SiteShell title="Home Page" page="home">
+    <section class="home__section">
+        <Fragment set:html={welcome.compiledContent()} />
+    </section>
+
+    <HomeAbout class="home__section" />
+
+    <HomeBlog class="home__section" />
+</SiteShell>
