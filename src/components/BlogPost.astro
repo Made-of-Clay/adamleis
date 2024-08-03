@@ -1,16 +1,23 @@
 ---
 import TimeTag from '@/components/TimeTag.astro';
-const { title, description, url, date } = Astro.props;
+const { title, description, url, date, classes } = Astro.props;
 ---
 
-<article>
-    <h3>{title}</h3>
+<article class={classes || ''}>
+    <h3>
+        <a href={url}>{title}</a>
+    </h3>
     {(description ?? '') && (
         <p>{description}</p>
     )}
     <footer>
         <a href={url}>Read</a>
-        {date && <TimeTag date={date}></TimeTag>}
+        {date && (
+            <div>
+                <span>posted:</span>
+                <TimeTag date={date}></TimeTag>
+            </div>
+        )}
     </footer>
 </article>
 
@@ -18,5 +25,11 @@ const { title, description, url, date } = Astro.props;
 footer {
     display: flex;
     justify-content: space-between;
+}
+h3 {
+    margin-top: 0;
+}
+h3 a {
+    border-bottom: none;
 }
 </style>
