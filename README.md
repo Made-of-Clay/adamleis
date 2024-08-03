@@ -1,22 +1,5 @@
-# The personal website of Adam Leis
+# AdamLeis.com
 
-This website currently acts as a kind of interactive resume and adds more details than could be covered in my resume. I have further plans for performance improvements and additions (more interactivity, cloud functions for handling contact emails, setting up Docker for consistent environments, etc...).
+This Astro-built dev blog is a WIP, as all profession developers' sites are. I'm sure I'll iterate on this several times, but I really just need to start with a very simple site to get things going. Too often, I fall prey to my own tendency to never finish a project because I keep iterating. Instead, I need to get one version out before starting another. There are things about this build that I don't like, but that's the point.
 
-A critical lesson that I have learned while in web is that there is always more to work on. This coincides with a valuable lesson from my time in art school: there are no finished projects, only abandoned ones.
-
-## Build Setup
-
-This source was originally built using an older version of `vue-cli`. The following notes have been preserved for personal reference.
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader). (This may be out-dated, I have not investigated it.)
+7/5/2024

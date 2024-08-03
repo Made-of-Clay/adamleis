@@ -1,0 +1,35 @@
+---
+import TimeTag from '@/components/TimeTag.astro';
+const { title, description, url, date, classes } = Astro.props;
+---
+
+<article class={classes || ''}>
+    <h3>
+        <a href={url}>{title}</a>
+    </h3>
+    {(description ?? '') && (
+        <p>{description}</p>
+    )}
+    <footer>
+        <a href={url}>Read</a>
+        {date && (
+            <div>
+                <span>posted:</span>
+                <TimeTag date={date}></TimeTag>
+            </div>
+        )}
+    </footer>
+</article>
+
+<style>
+footer {
+    display: flex;
+    justify-content: space-between;
+}
+h3 {
+    margin-top: 0;
+}
+h3 a {
+    border-bottom: none;
+}
+</style>

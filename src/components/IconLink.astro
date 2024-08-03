@@ -1,0 +1,26 @@
+---
+const { href, iconClasses, iconTitle, linkClasses, iconUse } = Astro.props;
+---
+
+<a href={href} class="iconLink" target="_blank">
+    {iconUse && (
+        <svg class="icon" aria-label={iconTitle}>
+            <use href={iconUse}></use>
+        </svg>
+    )}
+    {iconClasses && <span class={iconClasses} aria-hidden="true" title={iconTitle}></span>}
+</a>
+
+<style>
+.iconLink {
+    border-bottom: none;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+.icon {
+    --size: 2rem;
+    height: var(--size);
+    width: var(--size);
+    fill: currentColor;
+}
+</style>

@@ -1,0 +1,28 @@
+---
+import BlogPost from "@/components/BlogPost.astro";
+import SiteShell from "@/components/SiteShell.astro";
+import { getBlogPosts } from "@/helpers/getBlogPosts";
+
+const posts = await getBlogPosts();
+---
+
+<SiteShell title="Blog" page="blog">
+    <p>
+        So this has been a long-time coming. I've been writing misc. blog posts for a while, and I rarely publish them. This is my attempt to do better.
+    </p>
+
+    <p>
+        As with all web developer personal sites and blogs, this is a near-constant WIP. I'm going to make many mistakes, often silly ones. Such is dev life. Hit me up on X or LinkedIn to tease me, if something has helped, or even just to chat.
+    </p>
+
+    <p>Thanks for visiting!</p>
+
+    {posts.map(post =>
+        <BlogPost
+            title={post.data.title}
+            description={post.data.description}
+            url={`/blog/${post.slug}`}
+            date={post.data.date}
+        ></BlogPost>
+    )}
+</SiteShell>

@@ -1,0 +1,42 @@
+---
+const years = new Date().getFullYear() - 2010;
+const { class: classes } = Astro.props;
+import * as about from '../content/home/about.md';
+
+const content = about.compiledContent().replace('{years}', `${years}`);
+---
+
+<section class={`homeAbout ${classes}`}>
+    <!-- TODO install/write a responsive image script & component to generate more sizes and handle better -->
+
+    <picture>
+        <img src="/images/me.jpg" alt="Adam's Face">
+    </picture>
+
+    <Fragment set:html={content} />
+</section>
+
+<style>
+picture {
+    @media (max-width: 600px) {
+        display: flex;
+        justify-content: center;
+    }
+
+    @media (min-width: 600px) {
+        float: right;
+        shape-outside: circle(50%);
+    }
+}
+img {
+    border: 0.2rem solid var(--emerald-500);
+    border-radius: 50%;
+    filter: contrast(1.25);
+    margin: 1rem;
+    max-width: 15rem;
+
+    @media (min-width: 800px) {
+        margin-right: -4rem;
+    }
+}
+</style>
