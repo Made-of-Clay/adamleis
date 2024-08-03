@@ -58,4 +58,4 @@ I've been testing this tripartite model of creativity for a number of years on-a
 
 What do you think? What variations of creativity can you think of that this model describes well? What examples fail? Let me know on social media.
 
-Keep thinkin'.
+Keep thinkin', folks.
