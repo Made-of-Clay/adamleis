@@ -1,6 +1,6 @@
 ---
 external: false
-draft: false
+draft: true
 title: 'Sensation: Preliminary Meditations'
 description: Musings on the meaning of sensation and what senses are.
 date: 2024-05-21
