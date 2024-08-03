@@ -1,9 +1,14 @@
 ---
-const { href, iconClasses, iconTitle, linkClasses } = Astro.props;
+const { href, iconClasses, iconTitle, linkClasses, iconUse } = Astro.props;
 ---
 
 <a href={href} class="iconLink" target="_blank">
-    <span class={iconClasses} aria-hidden="true" title={iconTitle}></span>
+    {iconUse && (
+        <svg class="icon" aria-label={iconTitle}>
+            <use href={iconUse}></use>
+        </svg>
+    )}
+    {iconClasses && <span class={iconClasses} aria-hidden="true" title={iconTitle}></span>}
 </a>
 
 <style>
@@ -11,5 +16,11 @@ const { href, iconClasses, iconTitle, linkClasses } = Astro.props;
     border-bottom: none;
     font-size: 1.5rem;
     text-decoration: none;
+}
+.icon {
+    --size: 2rem;
+    height: var(--size);
+    width: var(--size);
+    fill: currentColor;
 }
 </style>
