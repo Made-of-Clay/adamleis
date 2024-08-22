@@ -6,8 +6,8 @@ import { getCollection } from 'astro:content';
 export async function getStaticPaths() {
     const allBlogs = await getCollection('work');
     const data = allBlogs
-        .filter(post => !post.slug.includes('/'))
-        .map(post => ({
+        .filter((post) => !post.slug.includes('/'))
+        .map((post) => ({
             params: {
                 slug: post.slug.split('/')[0],
             },
@@ -25,7 +25,7 @@ const title = post.data?.title ? post.data?.title : '';
 
 <SiteShell title={title}>
     <article data-tpl="[slug]">
-        {post.data.date && <TimeTag date={post.data.date}></TimeTag>}
+        {post.data.date && <TimeTag date={post.data.date} />}
         <Content />
     </article>
 </SiteShell>
