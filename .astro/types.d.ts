@@ -215,6 +215,15 @@ declare module 'astro:content' {
   data: any
 } & { render(): Render[".md"] };
 };
+"work": {
+"green-eggs-ham-js.md": {
+	id: "green-eggs-ham-js.md";
+  slug: "green-eggs-ham-js";
+  body: string;
+  collection: "work";
+  data: any
+} & { render(): Render[".md"] };
+};
 
 	};
 
