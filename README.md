@@ -10,3 +10,17 @@ Woot!
 - [X](https://twitter.com/theNthAdam)
 - [LinkedIn](https://www.linkedin.com/in/adam-leis-75018b23/)
 - [GitHub](https://github.com/Made-of-Clay)
+
+## Firebase Hosting Deployment
+
+If `firebase` isn't globally installed in your node environment, run the following first ([initially recorded here](https://firebase.google.com/docs/cli#windows-npm)):
+
+`npm i -g firebase-tools`
+
+If it's already installed but only locally, prefix the deployment script with `npx `.
+
+Then to deploy…
+
+`firebase deploy --only hosting`
+
+[Firebase Quickstart Guide](https://firebase.google.com/docs/hosting/quickstart)
