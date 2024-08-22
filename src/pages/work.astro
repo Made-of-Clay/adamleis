@@ -1,0 +1,50 @@
+---
+import SiteShell from "@/components/SiteShell.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("work"))
+    .filter(post => post.data.draft === false)
+    .sort((a, b) =>
+        a.data.title < b.data.title
+            ? -1
+            : a.data.title > b.data.title
+            ? 1 : 0
+    );
+---
+
+<SiteShell title="Work" page="work">
+    <h1>My Work</h1>
+
+    <!-- I will clean this up to be more intentional later. For now, I just need to get the content out there. -->
+    
+    {posts.map(post => (
+        <article>
+            {post.data.title}
+            <a href={`/work/${post.slug}`}>See Work →</a>
+        </article>
+    ))}
+</SiteShell>
+
+<script is:inline>
+document.querySelectorAll('article').forEach(el => {
+    el.addEventListener('click', event => {
+        /** @type {HTMLAnchorElement} link */
+        const link = event.currentTarget.querySelector('a');
+        if (!link)
+            console.error('There is a missing link in the clicked article.', event.target);
+
+        location.href = link.href;
+    })
+})
+</script>
+
+<style>
+article {
+    cursor: pointer;
+    display: flex;
+
+    a {
+        margin-left: auto;
+    }
+}
+</style>
