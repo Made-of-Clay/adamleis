@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "deploy": "firebase deploy --only hosting"
   },
   "dependencies": {
     "@astrojs/markdoc": "^0.11.0",
