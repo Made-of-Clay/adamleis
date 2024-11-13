@@ -170,6 +170,20 @@ declare module 'astro:content' {
   collection: "blog";
   data: any
 } & { render(): Render[".md"] };
+"gamify-neovim.md": {
+	id: "gamify-neovim.md";
+  slug: "gamify-neovim";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"garden-tree-choice.md": {
+	id: "garden-tree-choice.md";
+  slug: "garden-tree-choice";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
 "generative-ai-correctness.md": {
 	id: "generative-ai-correctness.md";
   slug: "generative-ai-correctness";
@@ -219,6 +233,13 @@ declare module 'astro:content' {
 "green-eggs-ham-js.md": {
 	id: "green-eggs-ham-js.md";
   slug: "green-eggs-ham-js";
+  body: string;
+  collection: "work";
+  data: any
+} & { render(): Render[".md"] };
+"kona-erp.md": {
+	id: "kona-erp.md";
+  slug: "kona-erp";
   body: string;
   collection: "work";
   data: any

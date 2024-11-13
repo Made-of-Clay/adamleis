@@ -24,3 +24,7 @@ Then to deploy…
 `firebase deploy --only hosting`
 
 [Firebase Quickstart Guide](https://firebase.google.com/docs/hosting/quickstart)
+
+### `npm` Script
+
+I've also added a script: `npm run deploy`
