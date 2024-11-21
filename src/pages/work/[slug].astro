@@ -21,9 +21,10 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 
 const title = post.data?.title ? post.data?.title : '';
+const desc = post.data?.description ?? '';
 ---
 
-<SiteShell title={title}>
+<SiteShell title={title} description={desc}>
     <article data-tpl="[slug]">
         {post.data.date && <TimeTag date={post.data.date} />}
         <Content />

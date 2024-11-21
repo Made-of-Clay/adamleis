@@ -2,7 +2,7 @@
 external: false
 draft: false
 title: Mock Service Worker Reminder
-description: I'm reminded of a solution to an occasionally-occuring problem using MSW.js during localhost development.
+description: I'm reminded of a solution to an occasionally-occurring problem using MSW.js during localhost development.
 date: 2024-06-10
 tags: [msw, web-dev, frontend, service-workers]
 ---

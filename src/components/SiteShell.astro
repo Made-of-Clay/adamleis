@@ -6,7 +6,7 @@ import GoogleFont from './GoogleFont.astro';
 import FontAwesome from './FontAwesome.astro';
 import Footer from './Footer.astro';
 
-const { title, page } = Astro.props;
+const { title, page, description } = Astro.props;
 const docTitle = title === 'Home Page' || !title ? '' : `${title} | `;
 ---
 
@@ -16,6 +16,7 @@ const docTitle = title === 'Home Page' || !title ? '' : `${title} | `;
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <meta name="theme-color" content="#ffffff" />
+        {description && <meta name="description" content={description} />}
 
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
@@ -48,7 +49,7 @@ const docTitle = title === 'Home Page' || !title ? '' : `${title} | `;
     </body>
 </html>
 
-<style>
+<style data-note="Just a reminder that this is how Astro components work as SFCs">
     header {
         display: flex;
         flex-direction: row;
