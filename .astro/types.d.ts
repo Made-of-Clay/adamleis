@@ -237,9 +237,37 @@ declare module 'astro:content' {
   collection: "work";
   data: any
 } & { render(): Render[".md"] };
+"iti-graviti.md": {
+	id: "iti-graviti.md";
+  slug: "iti-graviti";
+  body: string;
+  collection: "work";
+  data: any
+} & { render(): Render[".md"] };
+"iti-projects.md": {
+	id: "iti-projects.md";
+  slug: "iti-projects";
+  body: string;
+  collection: "work";
+  data: any
+} & { render(): Render[".md"] };
 "kona-erp.md": {
 	id: "kona-erp.md";
   slug: "kona-erp";
+  body: string;
+  collection: "work";
+  data: any
+} & { render(): Render[".md"] };
+"my-work.md": {
+	id: "my-work.md";
+  slug: "my-work";
+  body: string;
+  collection: "work";
+  data: any
+} & { render(): Render[".md"] };
+"victory-tracekr.md": {
+	id: "victory-tracekr.md";
+  slug: "victory-tracekr";
   body: string;
   collection: "work";
   data: any
