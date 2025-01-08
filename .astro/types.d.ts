@@ -265,6 +265,13 @@ declare module 'astro:content' {
   collection: "work";
   data: any
 } & { render(): Render[".md"] };
+"style-targeting.md": {
+	id: "style-targeting.md";
+  slug: "style-targeting";
+  body: string;
+  collection: "work";
+  data: any
+} & { render(): Render[".md"] };
 "victory-tracekr.md": {
 	id: "victory-tracekr.md";
   slug: "victory-tracekr";
