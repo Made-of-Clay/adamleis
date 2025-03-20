@@ -1,5 +1,5 @@
 /* eslint-disable turbo/no-undeclared-env-vars */
-import { defineConfig } from 'astro/config';
+import { defineConfig, passthroughImageService } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import markdoc from '@astrojs/markdoc';
 
@@ -24,7 +24,10 @@ const isBuild = SCRIPT.includes('astro build');
 let BASE_URL = isBuild ? LIVE_URL : LOCALHOST_URL;
 
 export default defineConfig({
-    server: { port: SERVER_PORT },
-    site: BASE_URL,
-    integrations: [sitemap(), markdoc({ allowHTML: true })],
+  server: { port: SERVER_PORT },
+  site: BASE_URL,
+  integrations: [sitemap(), markdoc({ allowHTML: true })],
+  image: {
+    service: passthroughImageService(),
+  },
 });
