@@ -191,6 +191,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: any
 } & { render(): Render[".md"] };
+"learning-theory-response.md": {
+	id: "learning-theory-response.md";
+  slug: "learning-theory-response";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
 "msw-reminder.md": {
 	id: "msw-reminder.md";
   slug: "msw-reminder";
