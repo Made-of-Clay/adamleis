@@ -3,8 +3,8 @@ external: false
 draft: false
 title: MSW Lessons
 description: I share lessons I have learned from using MSW to mock API requests.
-date: 2025-03-04
-tags: [code, programming, learning, memory]
+date: 2025-03-20
+tags: [code, programming, api, js]
 ---
 
 # MSW Lessons
@@ -40,11 +40,12 @@ import { faker } from '@faker-js/faker';
 
 // example generator script
 function generateTransaction() {
-    // the id format is arbitrary
-    const transactionId = faker.database.mongoObjectId();
+    // mock the data as needed using faker
     // …
     return {…};
 }
+
+// … other implementation code; when simple enough, I can have AI do a lot of
 
 /**
  * @param {Array} dataToWrite Array of data to write to file
@@ -87,6 +88,8 @@ To avoid this, I wrote a helper function that can be called from the `main.ts` s
 
 ```ts
 // maybeLoadMocks.ts
+
+// imported from constants so vitest can stub them
 import { isDev, shouldMockAPI } from '@/constants';
 
 export const shouldLoadMocks = isDev && shouldMockAPI;

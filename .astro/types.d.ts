@@ -198,6 +198,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: any
 } & { render(): Render[".md"] };
+"msw-lessons.md": {
+	id: "msw-lessons.md";
+  slug: "msw-lessons";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
 "msw-reminder.md": {
 	id: "msw-reminder.md";
   slug: "msw-reminder";
