@@ -219,6 +219,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: any
 } & { render(): Render[".md"] };
+"testing-components-async.md": {
+	id: "testing-components-async.md";
+  slug: "testing-components-async";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
 "vue-slots-di.md": {
 	id: "vue-slots-di.md";
   slug: "vue-slots-di";
