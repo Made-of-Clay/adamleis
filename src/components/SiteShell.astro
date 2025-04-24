@@ -5,12 +5,14 @@ import HeaderLink from './HeaderLink.astro';
 import GoogleFont from './GoogleFont.astro';
 import FontAwesome from './FontAwesome.astro';
 import Footer from './Footer.astro';
+import ParticleNetwork from './ParticleNetwork.astro';
+import ThemeToggle from './ThemeToggle.astro';
 
 const { title, page, description } = Astro.props;
 const docTitle = title === 'Home Page' || !title ? '' : `${title} | `;
 ---
 
-<html data-theme="night" lang="en">
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
@@ -24,10 +26,15 @@ const docTitle = title === 'Home Page' || !title ? '' : `${title} | `;
 
         <GoogleFont />
         <FontAwesome />
-
         <script is:inline type="module" src="/main.js"></script>
     </head>
     <body>
+        <ParticleNetwork />
+
+        <div id="themeToggleContainer" data-style="position: fixed; bottom: 0; right: 0; z-index: 1; padding: 1rem;">
+            <ThemeToggle />
+        </div>
+
         <header>
             <!-- TODO build one of the logo monogram ideas -->
             <a id="homeLink" href="/">Adam Leis</a>
@@ -50,6 +57,14 @@ const docTitle = title === 'Home Page' || !title ? '' : `${title} | `;
 </html>
 
 <style data-note="Just a reminder that this is how Astro components work as SFCs">
+    :root {
+        --transitionSpeed: 0.3s;
+    }
+    * {
+        transition:
+            background-color var(--transitionSpeed) ease-in-out,
+            color var(--transitionSpeed) ease-in-out;
+    }
     header {
         display: flex;
         flex-direction: row;
@@ -72,5 +87,12 @@ const docTitle = title === 'Home Page' || !title ? '' : `${title} | `;
         border-bottom: none;
         color: inherit;
         font-weight: bold;
+    }
+    #themeToggleContainer {
+        bottom: 0;
+        padding: 1rem;
+        position: fixed;
+        right: 0;
+        z-index: 1;
     }
 </style>
