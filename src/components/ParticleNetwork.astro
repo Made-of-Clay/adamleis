@@ -1,0 +1,113 @@
+<script is:inline src="/particle-network.min.js"></script>
+<script defer type="module">
+    function useDarkTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        return currentTheme
+            ? currentTheme === 'dark'
+            : (window.matchMedia('(prefers-color-scheme: dark)')?.matches ?? false);
+    }
+    // set particle color based on light vs dark theme
+    // check prefers-color-scheme media query
+    // const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    // const prefersDarkScheme = document.body.getAttribute('data-theme') === 'dark';
+
+    // const animatingClass = 'particleNetwork--animating';
+    // const hiddenClass = 'particleNetwork--hidden';
+    const bodyAttr = 'data-has-particle-network';
+    // const fadeDurationSeconds = 1;
+    function startAnimation() {
+        const particleContainer = document.createElement('div');
+        document.body.setAttribute(bodyAttr, true);
+        document.body.prepend(particleContainer);
+        particleContainer.id = 'particleContainer';
+        // TODO update code to include star/stop controls
+        const options = {
+            particleColor: useDarkTheme() ? '#555' : '#ddd',
+            background: getComputedStyle(document.documentElement).getPropertyValue('--bg'),
+            // interactive: true,
+            // speed: 'fast',
+            density: 'high',
+            // hover: true,
+            maxParticles: 10,
+        };
+        // particleContainer.classList.add(hiddenClass);
+        // particleContainer.classList.add(animatingClass);
+        // setTimeout(() => {
+        //     particleContainer.classList.add(hiddenClass);
+        //     particleContainer.classList.remove(animatingClass);
+        // }, 1000 * fadeDurationSeconds);
+        new ParticleNetwork(particleContainer, options);
+    }
+    function stopAnimation() {
+        document.body.removeAttribute(bodyAttr);
+        const particleContainer = document.getElementById('particleContainer');
+        if (particleContainer) {
+            particleContainer.remove();
+        }
+    }
+
+    const reducedMotionMediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (!reducedMotionMediaQuery.matches) {
+        startAnimation();
+    }
+    reducedMotionMediaQuery.addEventListener('change', (event) => {
+        if (event.matches) {
+            stopAnimation();
+        } else {
+            startAnimation();
+        }
+    });
+
+    const themedColors = {
+        'color-scheme': ['dark', 'light'],
+        bg: ['#212121', '#fff'],
+        text: ['#dcdcdc', '#212121'],
+        'text-light': ['#ababab', '#585858'],
+        accent: ['#ffb300', '#0d47a1'],
+        'accent-bg': ['#2b2b2b', '#f5f7ff'],
+        'accent-hover': ['#ffe099', '#1266e2'],
+        'accent-text': ['var(--bg)', 'var(--bg)'],
+        code: ['#f06292', '#d81b60'],
+        preformatted: ['#ccc', '#444'],
+        disabled: ['#111', '#efefef'],
+    };
+    // start/stop animation when body[data-theme] changes
+    document.documentElement.addEventListener('change', (event) => {
+        for (const [prop, value] of Object.entries(themedColors)) {
+            const themeIndex = useDarkTheme() ? 0 : 1;
+            document.documentElement.style.setProperty(`--${prop}`, value[themeIndex]);
+        }
+
+        // This is a bit ham-fisted, but it'll do until I build the particle network myself.
+        stopAnimation();
+        startAnimation();
+    });
+</script>
+
+<style is:global>
+    [data-has-particle-network] main {
+        transition:
+            background-color var(--transitionSpeed) ease-in-out,
+            box-shadow var(--transitionSpeed) ease-in-out;
+
+        [data-theme='dark'] & {
+            /* @media (prefers-color-scheme: dark) { */
+            background-color: #00000066;
+            box-shadow: 0 0 3rem black;
+        }
+        /* @media (prefers-color-scheme: light) { */
+        [data-theme='light'] & {
+            background-color: #ffffffbb;
+            box-shadow: 0 0 3rem white;
+        }
+    }
+
+    #particleContainer {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+    }
+</style>
