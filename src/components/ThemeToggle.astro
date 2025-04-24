@@ -1,0 +1,67 @@
+---
+
+---
+
+<svg class="themeToggle" width="50" height="50" viewBox="-5 -5 40 40">
+    <g class="themeToggle__wrapper">
+        <g class="themeToggle__icon--light">
+            <circle cx="15" cy="15" r="6" fill="currentColor"></circle>
+
+            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"
+            ></line>
+
+            <use href="#ray" transform="rotate(45 15 15)"></use>
+            <use href="#ray" transform="rotate(90 15 15)"></use>
+            <use href="#ray" transform="rotate(135 15 15)"></use>
+            <use href="#ray" transform="rotate(180 15 15)"></use>
+            <use href="#ray" transform="rotate(225 15 15)"></use>
+            <use href="#ray" transform="rotate(270 15 15)"></use>
+            <use href="#ray" transform="rotate(315 15 15)"></use>
+        </g>
+        <path
+            class="themeToggle__icon--dark"
+            fill="currentColor"
+            d="
+            M 23, 5
+            A 12 12 0 1 0 23, 25
+            A 12 12 0 0 1 23, 5"
+            style=""></path>
+    </g>
+</svg>
+
+<script type="module">
+    // set data-theme based on system preference
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const theme = currentTheme === 'dark' || (!currentTheme && prefersDark) ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+
+    const svg = document.querySelector('.themeToggle');
+    svg.addEventListener('click', () => {
+        const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.dispatchEvent(new Event('change'));
+    });
+</script>
+
+<style is:global>
+    .themeToggle__wrapper {
+        rotate: 0deg;
+        transform-origin: bottom center;
+        transition: rotate var(--transitionSpeed) ease-in-out;
+
+        [data-theme='dark'] & {
+            rotate: 180deg;
+            transition: rotate var(--transitionSpeed) ease-in-out;
+        }
+    }
+    .themeToggle {
+        border: 1px dashed hsla(0, 0%, 50%, 0.5);
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .themeToggle__icon--dark {
+        rotate: 180deg;
+        transform-origin: bottom center;
+    }
+</style>
