@@ -1,5 +1,10 @@
-<script is:inline src="/particle-network.min.js"></script>
-<script defer type="module">
+---
+// import ParticleNetworkCls from '@/particle-network.ts';
+// console.log('ParticleNetworkCls', ParticleNetworkCls.toString());
+---
+
+<script>
+    import ParticleNetworkCls from '@/particle-network.ts'; // "Cls" suffix is workaround for Astro's import bug
     function useDarkTheme() {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         return currentTheme
@@ -17,7 +22,7 @@
     // const fadeDurationSeconds = 1;
     function startAnimation() {
         const particleContainer = document.createElement('div');
-        document.body.setAttribute(bodyAttr, true);
+        document.body.setAttribute(bodyAttr, 'true');
         document.body.prepend(particleContainer);
         particleContainer.id = 'particleContainer';
         // TODO update code to include star/stop controls
@@ -29,14 +34,14 @@
             density: 'high',
             // hover: true,
             maxParticles: 10,
-        };
+        } as const;
         // particleContainer.classList.add(hiddenClass);
         // particleContainer.classList.add(animatingClass);
         // setTimeout(() => {
         //     particleContainer.classList.add(hiddenClass);
         //     particleContainer.classList.remove(animatingClass);
         // }, 1000 * fadeDurationSeconds);
-        new ParticleNetwork(particleContainer, options);
+        new ParticleNetworkCls(particleContainer, options);
     }
     function stopAnimation() {
         document.body.removeAttribute(bodyAttr);
