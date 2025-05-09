@@ -1,4 +1,6 @@
 :root {
+    --particle: #555;
+ 
     /* Simple.CSS Overrides */
     --accent: var(--emerald-500);
     --accent-hover: var(--emerald-300);
