@@ -1,3 +1,5 @@
+const hexRegExp = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i;
+
 /**
  * Particle Node/Object
  */
@@ -96,18 +98,8 @@ class ParticleNetwork {
         });
         this.container.appendChild(this.bgDiv);
 
-        const hexRegExp = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i;
-        if ((hexRegExp).test(this.options.background)) {
-            this.#setStyles(this.bgDiv, { background: this.options.background });
-        } else if ((/\.(gif|jpg|jpeg|tiff|png)$/i).test(this.options.background)) {
-            this.#setStyles(this.bgDiv, {
-                background: `url("${this.options.background}") no-repeat center`,
-                'background-size': 'cover'
-            });
-        } else {
-            console.error('Please specify a valid background image or hexadecimal color');
-            return false;
-        }
+        if (this.#setBackground() === false)
+            return;
 
         if (!(hexRegExp).test(this.options.particleColor)) {
             console.error('Please specify a valid particleColor hexadecimal color');
@@ -117,7 +109,7 @@ class ParticleNetwork {
         this.canvas.width = Number(this.container.dataset.width);
         this.canvas.height = Number(this.container.dataset.height);
         this.#setStyles(this.container, { position: 'relative' });
-        this.#setStyles(this.canvas, { 'z-index': '20', position: 'relative' });
+        this.#setStyles(this.canvas, { 'z-index': '20', position: 'relative', 'pointer-events': 'none' });
 
         let resetTimer: ReturnType<typeof setTimeout>;
         window.addEventListener('resize', () => {
@@ -149,6 +141,7 @@ class ParticleNetwork {
             this.particles.push(new Particle(this));
         }
 
+        // TODO this may need updated when options update eventually
         if (this.options.interactive) {
             this.mouseParticle = new Particle(this);
             this.mouseParticle.velocity = { x: 0, y: 0 };
@@ -205,6 +198,11 @@ class ParticleNetwork {
         }
     }
 
+    updateOptions(options: Partial<ParticleNetworkOptions>) {
+        Object.assign(this.options, options);
+        this.#setBackground();
+    }
+
     #velocityMap: Record<string, number> = {
         fast: 1,
         slow: 0.33,
@@ -224,6 +222,20 @@ class ParticleNetwork {
                 : typeof density === 'number'
                     ? density
                     : 10000;
+    }
+
+    #setBackground() {
+        if ((hexRegExp).test(this.options.background)) {
+            this.#setStyles(this.bgDiv, { background: this.options.background });
+        } else if ((/\.(gif|jpg|jpeg|tiff|png)$/i).test(this.options.background)) {
+            this.#setStyles(this.bgDiv, {
+                background: `url("${this.options.background}") no-repeat center`,
+                'background-size': 'cover'
+            });
+        } else {
+            console.error('Please specify a valid background image or hexadecimal color');
+            return false;
+        }
     }
 
     #setStyles(div: HTMLElement, styles: Record<string, string | number>) {

@@ -1,47 +1,24 @@
----
-// import ParticleNetworkCls from '@/particle-network.ts';
-// console.log('ParticleNetworkCls', ParticleNetworkCls.toString());
----
-
 <script>
     import ParticleNetworkCls from '@/particle-network.ts'; // "Cls" suffix is workaround for Astro's import bug
-    function useDarkTheme() {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        return currentTheme
-            ? currentTheme === 'dark'
-            : (window.matchMedia('(prefers-color-scheme: dark)')?.matches ?? false);
-    }
-    // set particle color based on light vs dark theme
-    // check prefers-color-scheme media query
-    // const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    // const prefersDarkScheme = document.body.getAttribute('data-theme') === 'dark';
 
-    // const animatingClass = 'particleNetwork--animating';
-    // const hiddenClass = 'particleNetwork--hidden';
+    let particleNetwork: ParticleNetworkCls;
     const bodyAttr = 'data-has-particle-network';
-    // const fadeDurationSeconds = 1;
     function startAnimation() {
+        const computedStyle = getComputedStyle(document.documentElement);
         const particleContainer = document.createElement('div');
         document.body.setAttribute(bodyAttr, 'true');
         document.body.prepend(particleContainer);
         particleContainer.id = 'particleContainer';
-        // TODO update code to include star/stop controls
         const options = {
-            particleColor: useDarkTheme() ? '#555' : '#ddd',
-            background: getComputedStyle(document.documentElement).getPropertyValue('--bg'),
+            particleColor: computedStyle.getPropertyValue('--particle'),
+            background: computedStyle.getPropertyValue('--bg'),
             // interactive: true,
             // speed: 'fast',
             density: 'high',
             // hover: true,
             maxParticles: 10,
         } as const;
-        // particleContainer.classList.add(hiddenClass);
-        // particleContainer.classList.add(animatingClass);
-        // setTimeout(() => {
-        //     particleContainer.classList.add(hiddenClass);
-        //     particleContainer.classList.remove(animatingClass);
-        // }, 1000 * fadeDurationSeconds);
-        new ParticleNetworkCls(particleContainer, options);
+        particleNetwork = new ParticleNetworkCls(particleContainer, options);
     }
     function stopAnimation() {
         document.body.removeAttribute(bodyAttr);
@@ -63,29 +40,12 @@
         }
     });
 
-    const themedColors = {
-        'color-scheme': ['dark', 'light'],
-        bg: ['#212121', '#fff'],
-        text: ['#dcdcdc', '#212121'],
-        'text-light': ['#ababab', '#585858'],
-        accent: ['#ffb300', '#0d47a1'],
-        'accent-bg': ['#2b2b2b', '#f5f7ff'],
-        'accent-hover': ['#ffe099', '#1266e2'],
-        'accent-text': ['var(--bg)', 'var(--bg)'],
-        code: ['#f06292', '#d81b60'],
-        preformatted: ['#ccc', '#444'],
-        disabled: ['#111', '#efefef'],
-    };
-    // start/stop animation when body[data-theme] changes
-    document.documentElement.addEventListener('change', (event) => {
-        for (const [prop, value] of Object.entries(themedColors)) {
-            const themeIndex = useDarkTheme() ? 0 : 1;
-            document.documentElement.style.setProperty(`--${prop}`, value[themeIndex]);
-        }
-
-        // This is a bit ham-fisted, but it'll do until I build the particle network myself.
-        stopAnimation();
-        startAnimation();
+    document.documentElement.addEventListener('change', () => {
+        const computedStyle = getComputedStyle(document.documentElement);
+        particleNetwork.updateOptions({
+            particleColor: computedStyle.getPropertyValue('--particle'),
+            background: computedStyle.getPropertyValue('--bg'),
+        });
     });
 </script>
 
