@@ -30,6 +30,21 @@
 </svg>
 
 <script type="module">
+    const themedColors = {
+        'color-scheme': ['dark', 'light'],
+        bg: ['#212121', '#fff'],
+        particle: ['#555', '#ddd'],
+        text: ['#dcdcdc', '#212121'],
+        'text-light': ['#ababab', '#585858'],
+        accent: ['#ffb300', '#0d47a1'],
+        'accent-bg': ['#2b2b2b', '#f5f7ff'],
+        'accent-hover': ['#ffe099', '#1266e2'],
+        'accent-text': ['var(--bg)', 'var(--bg)'],
+        code: ['#f06292', '#d81b60'],
+        preformatted: ['#ccc', '#444'],
+        disabled: ['#111', '#efefef'],
+    };
+
     // set data-theme based on system preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -38,9 +53,24 @@
 
     const svg = document.querySelector('.themeToggle');
     svg.addEventListener('click', () => {
-        const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', theme);
-        document.documentElement.dispatchEvent(new Event('change'));
+        const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'dark';
+        const toggledThemeIndex = isDarkTheme ? 1 : 0;
+        document.documentElement.setAttribute('data-theme', themedColors['color-scheme'][toggledThemeIndex]);
+
+        const stylesId = 'dynamicThemeColors';
+        let styles = document.head.querySelector(`#${stylesId}`);
+        if (!styles) {
+            styles = Object.assign(document.createElement('style'), { id: stylesId });
+            document.head.appendChild(styles);
+        }
+
+        let styleContents = '';
+        for (const [prop, value] of Object.entries(themedColors)) {
+            styleContents += ` --${prop}:${value[toggledThemeIndex]};`;
+        }
+        styles.innerHTML = `:root { ${styleContents} }`;
+
+        document.documentElement.dispatchEvent(new Event('change', themedColors));
     });
 </script>
 
