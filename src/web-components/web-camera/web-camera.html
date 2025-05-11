@@ -1,0 +1,20 @@
+<template>
+    <video></video>
+    <canvas></canvas>
+
+    <div class="start-stream-actions">
+        <slot name="start-stream">
+            <button class="default-start-stream-btn">
+                Start Stream
+            </button>
+        </slot>
+    </div>
+
+    <div class="capture-frame-actions">
+        <slot name="capture-frame">
+            <button class="default-capture-frame-btn">
+                Capture
+            </button>
+        </slot>
+    </div>
+</template>
