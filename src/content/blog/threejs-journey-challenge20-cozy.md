@@ -11,6 +11,11 @@ tags: [code, threejs, creative]
 
 For this challenge, I'll strive to update this blog post in addition to social posts on my progress.
 
+*Updates:*
+
+- [Oct 13 Modeling](#update-oct-13)
+- Oct 13: [public link available](https://tjsj-cozy.web.app/)!
+
 ## Brainstorming
 
 With the theme being "Cozy Place," I began with brain dumping a lot of cozy place ideas: libraries, cozy reading nooks, big fluffy beds, etc. I briefly also considered how it could be made into a game, but then I remembered I'm a noob at this process and don't have 40 hours a week (or even half that probably) to dedicate to a month-long project. Gotta lock down that scope creep good and early.
@@ -48,6 +53,16 @@ I started this modeling approach (right or wrong) by making a rectangle/box and 
 I also hunted around until I found a great model (TODO give credit to model artist). I tweaked the size and orientation, then dropped it into my room, imported them into my code, *et voila*! I have a room corner with a chair!
 
 ![First Room Chair](./images/tjsj-020-first-room-chair.png)
+
+### Update Oct 13
+
+![Room with chair, side table, and mug](./images/tjsj-020-cozy-room-oct13.jpg)
+
+I've expanded the modeling a lot. I didn't like how the composition pinched the chair position, and I wanted taller shelves for my books than what the windows were allowing. I removed a window and threw a large book shelf with many books up. The Array modifier in Blender helped significantly with both the construction of the shelves *and* the multiplication of the books. (I created one book, used the Array mod to fill one shelf, then used the Array mod 2 more times to fill out each shelf along the X and Z axes [b/c Z is "up" in Blender]). I'd like to vary the book textures as a stretch goal, but this is sufficient for now.
+
+I also added a rug to lighten up the scene (thanks [Wayfair](https://www.wayfair.com/rugs/pdp/ebern-designs-zuhur-area-rug-w110736589.html?piid=1967988449)); most of the objects are espresso, my favorite "wood color," or a dark leather. Additionally, a floor lamp was added behind the chair to also *lighten up the room*. Eh?? EHHH???? Okay, that's enough.
+
+I just tonight (Oct 13) finished up adding a side table and hot drink mug. The mug is pretty low poly, but it's far enough away not to notice. Another stretch goal will be to get the scene just right, then start degrading the poly counts and see how far down I can tweak things to lighten the assets.
 
 ## Pending Conclusion
 
