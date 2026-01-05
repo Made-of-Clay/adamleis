@@ -9,7 +9,9 @@ tags: [code, threejs, creative, christmas, xmas, tree]
 
 # Three.js Journey December 2025, Challenge 21: Christmas
 
-I'm a bit behind on posting about this one, but the December 2025 challenge was, surprise surprise, Christmas themed. For my ideas, knowing it would likely be themed as such, I began in November thinking about how to angle the project. **I knew I wanted an interactive information site.**
+I'm a bit behind on posting about this one, but the December 2025 challenge was, surprise surprise, Christmas themed. For my ideas, knowing it would likely be themed as such, I began in November thinking about how to angle the project. **I knew I wanted an interactive information site.** 
+
+[Check out my Christmas Symbols project.](https://tjsj-xmas.web.app/)
 
 It's been a goal to learn the technical details of great info sites with rich interactions. It still is! This was my first crack at it, so let's dive in to what I learned.
 
@@ -81,7 +83,7 @@ This reinforced a central SEO idea: content is king. I *could* have made fancy g
 
 A handful of misc. was learned along the way too. As I began building and planning the scene, I learned from Bruno ("Lesson 48: Mixing HTML and WebGL") there are **performance hits taken when mixing HTML and WebGL content.** I must learn more about profiling these hits to mitigate them in future projects. I'm not sure how else you have good indexable (SEO) content with rich experiences.
 
-Also, **lighting is still tricky to get right**, especially depending on the desired style. While my scene's lighting is *acceptable*, I don't think it's optimal. Like modeling & texturing, this will require much practice.
+Also, **lighting is still tricky to get right**, especially depending on the desired style. While my scene's lighting is *acceptable*, I don't think it's optimal. Like modeling & texturing, this will require much practice. I'd also like to improve with post-processing effects like light bloom so the tree lights and star would have a bit of glow. Maybe some way to focus the elements of focus (e.g. make the lights twinkle a special way when focused, have the star pulse and glow, dim other lights or spotlight the sleigh, etc.)
 
 > Like modeling & texturing, [lighting] will require much practice.
 
