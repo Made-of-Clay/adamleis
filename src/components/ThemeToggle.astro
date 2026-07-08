@@ -6,10 +6,7 @@
     <g class="themeToggle__wrapper">
         <g class="themeToggle__icon--light">
             <circle cx="15" cy="15" r="6" fill="currentColor"></circle>
-
-            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"
-            ></line>
-
+            <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
             <use href="#ray" transform="rotate(45 15 15)"></use>
             <use href="#ray" transform="rotate(90 15 15)"></use>
             <use href="#ray" transform="rotate(135 15 15)"></use>
@@ -21,56 +18,25 @@
         <path
             class="themeToggle__icon--dark"
             fill="currentColor"
-            d="
-            M 23, 5
-            A 12 12 0 1 0 23, 25
-            A 12 12 0 0 1 23, 5"
-            style=""></path>
+            d="M 23, 5 A 12 12 0 1 0 23, 25 A 12 12 0 0 1 23, 5"></path>
     </g>
 </svg>
 
 <script type="module">
-    const themedColors = {
-        'color-scheme': ['dark', 'light'],
-        bg: ['#212121', '#fff'],
-        particle: ['#555', '#ddd'],
-        text: ['#dcdcdc', '#212121'],
-        'text-light': ['#ababab', '#585858'],
-        accent: ['#ffb300', '#0d47a1'],
-        'accent-bg': ['#2b2b2b', '#f5f7ff'],
-        'accent-hover': ['#ffe099', '#1266e2'],
-        'accent-text': ['var(--bg)', 'var(--bg)'],
-        code: ['#f06292', '#d81b60'],
-        preformatted: ['#ccc', '#444'],
-        disabled: ['#111', '#efefef'],
-    };
-
-    // set data-theme based on system preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const theme = currentTheme === 'dark' || (!currentTheme && prefersDark) ? 'dark' : 'light';
+    const storageTheme = sessionStorage.getItem('theme');
+    const theme = storageTheme || (prefersDark ? 'dark' : 'light');
     document.documentElement.setAttribute('data-theme', theme);
 
-    const svg = document.querySelector('.themeToggle');
-    svg.addEventListener('click', () => {
-        const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'dark';
-        const toggledThemeIndex = isDarkTheme ? 1 : 0;
-        document.documentElement.setAttribute('data-theme', themedColors['color-scheme'][toggledThemeIndex]);
+    const metaTheme = document.head.children.namedItem('theme-color');
+    metaTheme.content = theme === 'dark' ? '#212121' : '#ffffff';
 
-        const stylesId = 'dynamicThemeColors';
-        let styles = document.head.querySelector(`#${stylesId}`);
-        if (!styles) {
-            styles = Object.assign(document.createElement('style'), { id: stylesId });
-            document.head.appendChild(styles);
-        }
-
-        let styleContents = '';
-        for (const [prop, value] of Object.entries(themedColors)) {
-            styleContents += ` --${prop}:${value[toggledThemeIndex]};`;
-        }
-        styles.innerHTML = `:root { ${styleContents} }`;
-
-        document.documentElement.dispatchEvent(new Event('change', themedColors));
+    document.querySelector('.themeToggle').addEventListener('click', () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const next = isDark ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        sessionStorage.setItem('theme', next);
+        metaTheme.content = next === 'dark' ? '#212121' : '#ffffff';
     });
 </script>
 
