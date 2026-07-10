@@ -1,8 +1,10 @@
 ---
 import IconLink from './IconLink.astro';
+// astro props
+const { class: footerClass } = Astro.props;
 ---
 
-<footer id="bottom" class="text-sm leading-[1.75] mt-4">
+<footer id="bottom" class={footerClass}>
   <div>
     <IconLink
       href="https://www.facebook.com/people/Adam-Leis/pfbid023sf7k6XkbJ6kPcSVUHAiLcrF4iqFBdADZgBuV1hkrTcKgdZZ18RiNAW77fBkZjjvl/"

@@ -58,6 +58,14 @@
   --accent-hover: var(--pico-primary-hover);
 }
 
+:where(a:not([role=button])), [role=link] {
+  --pico-color: var(--pico-color-jade-350);
+}
+:where(a:not([role=button])):is([aria-current]:not([aria-current=false]),:hover,:active,:focus),
+[role=link]:is([aria-current]:not([aria-current=false]),:hover,:active,:focus) {
+  --pico-color: var(--pico-color-jade-200);
+}
+
 a {
   border-bottom: 1px solid;
   transition: all 0.15s;
@@ -65,7 +73,7 @@ a {
 }
 a:hover {
   border-bottom-color: transparent;
-  color: var(--accent-hover);
+  /* color: var(--accent-hover); */
 }
 
 article > h1:first-child {

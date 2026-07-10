@@ -13,7 +13,7 @@ const { nodes, Tag } = Markdoc;
   1. It takes a config (this file)
   2. It parses the content (markdown)
   3. It generates a tree-like data structure of content
-  4. We render the tree in Astro pages using astro-markdoc-renderer package
+  4. We render the tree in Astro pages using the @astrojs/markdoc integration
 */
 
 /* 
