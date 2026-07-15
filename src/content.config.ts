@@ -30,6 +30,7 @@ const blog = defineCollection({
 const work = defineCollection({
   loader: glob({ base: './src/content/work', pattern: '**/*.md' }),
   schema: contentCore.extend({
+    description: z.string().optional(),
     url: z.string().optional(),
   }),
 });
