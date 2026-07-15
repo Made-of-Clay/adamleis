@@ -4,16 +4,24 @@ import BlogPost from './BlogPost.astro';
 
 const postsToShow = await getRecentPosts();
 ---
-<section>
+<section data-view="HomeBlog">
     <h2>Blog</h2>
 
     {postsToShow.length && postsToShow.map((post) => (
         <BlogPost
             title={post.data.title}
             description={post.data.description ?? ''}
-            url={`/blog/${post.slug}`}
+            url={`/blog/${post.id}`}
             date={post.data.date ?? ''}
             classes="home-blog-preview"
         />
     ))}
 </section>
+
+<style is:global>
+  .home-blog-preview {
+    --pico-card-background-color: transparent;
+    --pico-card-sectioning-background-color: transparent;
+    border: 1px solid;
+  }
+</style>
