@@ -103,7 +103,7 @@ class ParticleNetwork {
 
     if (!(hexRegExp).test(this.options.particleColor)) {
       console.error('Please specify a valid particleColor hexadecimal color');
-      return false;
+      return;
     }
 
     this.canvas.width = Number(this.container.dataset.width);
@@ -115,7 +115,7 @@ class ParticleNetwork {
     window.addEventListener('resize', () => {
       if (`${this.container.offsetWidth}` === (this.container.dataset.width ?? '') &&
         `${this.container.offsetHeight}` === (this.container.dataset.height ?? '')) {
-        return false;
+        return;
       }
 
       this.canvas.width = this.container.offsetWidth;
@@ -182,8 +182,8 @@ class ParticleNetwork {
         if (!particleI || !particleJ)
           throw new ReferenceError(`Particles [i] (${this.particles[i]}) or [j] (${this.particles[j]}) were empty`);
         const distance = Math.sqrt(
-          (this.particles[i].x - this.particles[j].x) ** 2 +
-          (this.particles[i].y - this.particles[j].y) ** 2
+          (particleI.x - particleJ.x) ** 2 +
+          (particleI.y - particleJ.y) ** 2
         );
         if (distance > 120) continue;
 
@@ -191,8 +191,8 @@ class ParticleNetwork {
         this.ctx.strokeStyle = this.options.particleColor;
         this.ctx.globalAlpha = (120 - distance) / 120;
         this.ctx.lineWidth = 0.7;
-        this.ctx.moveTo(this.particles[i]?.x, this.particles[i]?.y);
-        this.ctx.lineTo(this.particles[j]?.x, this.particles[j]?.y);
+        this.ctx.moveTo(particleI.x, particleI.y);
+        this.ctx.lineTo(particleJ.x, particleJ.y);
         this.ctx.stroke();
       }
     }
@@ -215,7 +215,7 @@ class ParticleNetwork {
   #setVelocity(speed: number | string): number {
     return !speed
       ? 0.66
-      : typeof speed === 'number' ? speed : this.#velocityMap[speed]
+      : typeof speed === 'number' ? speed : (this.#velocityMap[speed] ?? 0.66)
   }
 
   #setDensity(density: number | string): number {
@@ -228,7 +228,7 @@ class ParticleNetwork {
           : 10000;
   }
 
-  #setBackground() {
+  #setBackground(): boolean {
     if ((hexRegExp).test(this.options.background)) {
       this.#setStyles(this.bgDiv, { background: this.options.background });
     } else if ((/\.(gif|jpg|jpeg|tiff|png)$/i).test(this.options.background)) {
@@ -240,6 +240,7 @@ class ParticleNetwork {
       console.error('Please specify a valid background image or hexadecimal color');
       return false;
     }
+    return true;
   }
 
   #setStyles(div: HTMLElement, styles: Record<string, string | number>) {

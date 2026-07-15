@@ -1,5 +1,8 @@
 ---
 draft: true
+external: false
+title: "Creativity Notes"
+date: 2024-07-31
 ---
 
 # Creativity Notes

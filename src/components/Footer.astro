@@ -1,6 +1,10 @@
 ---
 import IconLink from './IconLink.astro';
-// astro props
+
+interface Props {
+  class?: string;
+}
+
 const { class: footerClass } = Astro.props;
 ---
 

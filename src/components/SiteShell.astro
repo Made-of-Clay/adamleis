@@ -9,6 +9,12 @@ import Footer from './Footer.astro';
 import ParticleNetwork from './ParticleNetwork.astro';
 import ThemeToggle from './ThemeToggle.astro';
 
+interface Props {
+  title: string;
+  page?: string;
+  description?: string;
+}
+
 const { title, page, description } = Astro.props;
 const docTitle = title === 'Home Page' || !title ? '' : `${title} | `;
 ---
@@ -97,10 +103,10 @@ const docTitle = title === 'Home Page' || !title ? '' : `${title} | `;
         z-index: 1;
     }
 </style>
- <style is:global>
+<style is:global>
 
     footer.container-fluid, main.container-fluid {
         max-width: 1000px;
         margin: 0 auto;
     }
- </style>
+</style>

@@ -1,5 +1,14 @@
 ---
 import TimeTag from '@/components/TimeTag.astro';
+
+interface Props {
+  title: string;
+  url: string;
+  description?: string;
+  date?: Date;
+  classes?: string;
+}
+
 const { title, description, url, date, classes } = Astro.props;
 ---
 

@@ -1,6 +1,11 @@
 ---
 import { Prism } from "@astrojs/prism";
 
+interface Props {
+  language: string;
+  content: string;
+}
+
 const { language, content } = Astro.props;
 ---
 

@@ -1,52 +1,51 @@
 type PageMeta = {
   title: string;
-  description?: string;
-  canonicalUrl?: string;
+  description?: string | undefined;
+  canonicalUrl?: string | undefined;
 };
 
 type PageOgMeta = {
-  title: string; // page title
-  description?: string; // page description
+  title: string;
+  description?: string | undefined;
   type: "website";
-  url?: string; // site URL
-  image?: string; // preview image
-  imageAlt?: string; // alt text for preview image
-  imageWidth?: string; // preview image width - 1200px standard
-  imageHeight?: string; // preview image height - 627px standard
+  url?: string | undefined;
+  image?: string | undefined;
+  imageAlt?: string | undefined;
+  imageWidth?: string | undefined;
+  imageHeight?: string | undefined;
 };
 
 type PageTwitterMeta = {
-  title: string; // same as og:title
-  description?: string; // same as og:description
+  title: string;
+  description?: string | undefined;
   card: "summary_large_image";
-  site?: string; // twitter handle (@username) of blog owner
-  creator?: string; // twitter handle (@username) of content owner (usually same as blog owner)
-  image?: string; // same as og:image
-  imageAlt?: string; // same as og:image:alt
+  site?: string | undefined;
+  creator?: string | undefined;
+  image?: string | undefined;
+  imageAlt?: string | undefined;
 };
 
 type BlogPostOgMeta = {
-  title: string; // page title
-  description?: string; // page description
+  title: string;
+  description?: string | undefined;
   type: "article";
-  url?: string; // blog post url
-  author?: string; // post author name
-  // siteName?: string; // page title
-  publishDate: string; // ISO string
-  image?: string; // preview image
-  imageAlt?: string; // alt text for preview image
-  imageWidth?: string; // preview image width - 1200px standard
-  imageHeight?: string; // preview image height - 627px standard
+  url?: string | undefined;
+  author?: string | undefined;
+  publishDate: string;
+  image?: string | undefined;
+  imageAlt?: string | undefined;
+  imageWidth?: string | undefined;
+  imageHeight?: string | undefined;
 };
 
 type BlogPostTwitterMeta = {
-  title: string; // same as blog post og:title
-  description?: string; // same as blog post og:description
+  title: string;
+  description?: string | undefined;
   card: "summary_large_image";
-  site?: string; // twitter handle (@username) of blog owner
-  creator?: string; // twitter handle (@username) of content owner (usually same as blog owner)
-  image?: string; // same as blog post  og:image
-  imageAlt?: string; // same as blog post  og:image:alt
+  site?: string | undefined;
+  creator?: string | undefined;
+  image?: string | undefined;
+  imageAlt?: string | undefined;
 };
 
 export function getPageMeta({

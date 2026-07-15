@@ -1,7 +1,11 @@
 ---
 import SiteShell from '@/components/SiteShell.astro';
 import TimeTag from '@/components/TimeTag.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'work'>;
+}
 
 export async function getStaticPaths() {
     const allBlogs = await getCollection('work');
