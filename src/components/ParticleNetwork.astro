@@ -55,15 +55,20 @@
             background-color var(--transitionSpeed) ease-in-out,
             box-shadow var(--transitionSpeed) ease-in-out;
 
+        --shadowColor: var(--bg);
+        box-shadow: 0 0 3rem var(--shadowColor);
+        backdrop-filter: blur(0.25rem);
+        
+        /* toggle feature is one of last things needing done other than thorough testing */
         [data-theme='dark'] & {
             /* @media (prefers-color-scheme: dark) { */
-            background-color: #00000066;
-            box-shadow: 0 0 3rem black;
+            /* background-color: #00000066; */
+            /* box-shadow: 0 0 3rem black; */
         }
         /* @media (prefers-color-scheme: light) { */
         [data-theme='light'] & {
-            background-color: #ffffffbb;
-            box-shadow: 0 0 3rem white;
+            /* background-color: #ffffffbb; */
+            /* box-shadow: 0 0 3rem white; */
         }
     }
 
