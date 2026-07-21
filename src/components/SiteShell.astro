@@ -73,6 +73,8 @@ const docTitle = title === 'Home Page' || !title ? '' : `${title} | `;
             color var(--transitionSpeed) ease-in-out;
     }
     header {
+        background-color: var(--bg);
+        box-shadow: 0 0 1rem 1rem var(--bg);
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -88,7 +90,16 @@ const docTitle = title === 'Home Page' || !title ? '' : `${title} | `;
         }
     }
     #siteNav {
+        gap: 0.5rem;
         margin-block-start: 0;
+        padding: 0.5rem 0;
+
+        > a {
+            background-color: var(--bg);
+            border-radius: 0.25rem;
+            border: 1px solid;
+            padding: 0.25rem 0.5rem;
+        }
     }
     #homeLink {
         border-bottom: none;

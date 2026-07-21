@@ -61,10 +61,10 @@
           "type": "boolean",
           "const": true
         },
-        "url": {
+        "description": {
           "type": "string"
         },
-        "description": {
+        "url": {
           "type": "string"
         }
       },

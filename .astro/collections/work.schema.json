@@ -17,6 +17,9 @@
       "type": "string",
       "format": "date-time"
     },
+    "description": {
+      "type": "string"
+    },
     "url": {
       "type": "string"
     },
