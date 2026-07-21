@@ -25,6 +25,14 @@ const docTitle = title === 'Home Page' || !title ? '' : `${title} | `;
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <meta name="theme-color" content="#ffffff" />
+        <script is:inline>
+            (() => {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const theme = sessionStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+                document.head.children.namedItem('theme-color').content = theme === 'dark' ? '#212121' : '#ffffff';
+            })();
+        </script>
         {description && <meta name="description" content={description} />}
 
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

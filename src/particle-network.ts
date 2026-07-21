@@ -204,6 +204,9 @@ class ParticleNetwork {
 
   updateOptions(options: Partial<ParticleNetworkOptions>) {
     Object.assign(this.options, options);
+    if (options.particleColor) {
+      this.particles.forEach(p => p.particleColor = this.options.particleColor);
+    }
     this.#setBackground();
   }
 

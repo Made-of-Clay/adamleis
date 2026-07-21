@@ -64,11 +64,11 @@
 }
 
 :where(a:not([role=button])), [role=link] {
-  --pico-color: var(--pico-color-jade-350);
+  --pico-color: var(--accent);
 }
 :where(a:not([role=button])):is([aria-current]:not([aria-current=false]),:hover,:active,:focus),
 [role=link]:is([aria-current]:not([aria-current=false]),:hover,:active,:focus) {
-  --pico-color: var(--pico-color-jade-200);
+  --pico-color: var(--accent-hover);
 }
 
 a {

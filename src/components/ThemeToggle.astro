@@ -23,13 +23,7 @@
 </svg>
 
 <script type="module">
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const storageTheme = sessionStorage.getItem('theme');
-    const theme = storageTheme || (prefersDark ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', theme);
-
     const metaTheme = document.head.children.namedItem('theme-color');
-    metaTheme.content = theme === 'dark' ? '#212121' : '#ffffff';
 
     document.querySelector('.themeToggle').addEventListener('click', () => {
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark';

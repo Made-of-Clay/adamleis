@@ -9,7 +9,6 @@ interface Props {
 
 export async function getStaticPaths() {
     const allBlogs = await getCollection('blog');
-    console.log('allBlogs', allBlogs)
     const data = allBlogs
         .filter((post) => !post.id.includes('/'))
         .map((post) => ({
