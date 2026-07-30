@@ -28,10 +28,4 @@ The KONA application was a platform for multiple sub-applications that ran withi
     <figcaption>App List - Mobile</figcaption>
 </figure>
 
-<shadow-box src="/images/blog/kona--applist-mobile.jpg" alt="App List Mobile">
-    Testo Testington
-</shadow-box>
-
 The app list showed all of the apps that a user had access to. The apps were grouped alphabetically and a filter is available for quickly finding apps. Apps could be saved by a given user into groups as a sibling tab of the app list.
-
-##
