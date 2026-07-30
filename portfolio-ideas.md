@@ -1,5 +1,7 @@
 # Portfolio Ideas
 
+// Return to website refactor using this session maybe: `opencode -s ses_0bd1e0eb1ffeGjrA6JKGKs8Be3`
+
 ## Elemental
 
 Note: need to work out a better title later.

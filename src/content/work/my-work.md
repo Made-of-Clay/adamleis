@@ -1,3 +1,9 @@
+---
+draft: false
+title: "My Work"
+date: 2024-08-01
+---
+
 # My Work
 
 Due to the private nature of my work history in the last decade, the best I can offer (NDAs permitting) are some screenshots and explanations of the work.

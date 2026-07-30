@@ -1,12 +1,9 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "display": "theme/bubblegum",
+  "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
-    "moduleResolution": "node",
     "types": ["astro/client"],
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     }
   }
 }

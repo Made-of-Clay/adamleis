@@ -13,7 +13,7 @@ const { nodes, Tag } = Markdoc;
   1. It takes a config (this file)
   2. It parses the content (markdown)
   3. It generates a tree-like data structure of content
-  4. We render the tree in Astro pages using astro-markdoc-renderer package
+  4. We render the tree in Astro pages using the @astrojs/markdoc integration
 */
 
 /* 
@@ -39,34 +39,34 @@ export const config: Config = {
   tags: {
     details: {
       render: "details",
-      children: nodes.document.children,
+      children: nodes.document.children!,
     },
     summary: {
       render: "summary",
-      children: nodes.document.children,
+      children: nodes.document.children!,
     },
     sup: {
       render: "sup",
-      children: nodes.strong.children,
+      children: nodes.strong.children!,
     },
     sub: {
       render: "sub",
-      children: nodes.strong.children,
+      children: nodes.strong.children!,
     },
     abbr: {
       render: "abbr",
       attributes: {
         title: { type: String },
       },
-      children: nodes.strong.children,
+      children: nodes.strong.children!,
     },
     kbd: {
       render: "kbd",
-      children: nodes.strong.children,
+      children: nodes.strong.children!,
     },
     mark: {
       render: "mark",
-      children: nodes.strong.children,
+      children: nodes.strong.children!,
     },
     youtube: {
       render: "YouTubeEmbed",

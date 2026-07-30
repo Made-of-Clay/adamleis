@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "draft": {
+          "default": false,
+          "type": "boolean"
+        },
+        "featured": {
+          "default": false,
+          "type": "boolean"
+        },
+        "title": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "external": {
+          "type": "boolean",
+          "const": false
+        },
+        "description": {
+          "type": "string"
+        },
+        "ogImagePath": {
+          "type": "string"
+        },
+        "canonicalUrl": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "date",
+        "external"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "draft": {
+          "default": false,
+          "type": "boolean"
+        },
+        "featured": {
+          "default": false,
+          "type": "boolean"
+        },
+        "title": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "external": {
+          "type": "boolean",
+          "const": true
+        },
+        "description": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "date",
+        "external",
+        "url"
+      ]
+    }
+  ]
+}

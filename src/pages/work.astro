@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 import * as workBlerb from '@/content/work/my-work.md';
 
 const posts = (await getCollection('work'))
-    .filter((post) => post.data.draft === false && post.slug !== 'my-work')
+    .filter((post) => post.data.draft === false && post.id !== 'my-work')
     .sort((a, b) => (a.data.title < b.data.title ? -1 : a.data.title > b.data.title ? 1 : 0));
 ---
 
@@ -19,7 +19,7 @@ const posts = (await getCollection('work'))
         posts.map((post) => (
             <article>
                 {post.data.title}
-                <a href={`/work/${post.slug}`}>See Work →</a>
+                <a href={`/work/${post.id}`}>See Work →</a>
             </article>
         ))
     }

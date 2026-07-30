@@ -1,5 +1,6 @@
 ---
-import 'simpledotcss/simple.min.css';
+import '@picocss/pico/css/pico.min.css';
+import '@picocss/pico/css/pico.colors.min.css';
 import '@/styles/global.css';
 import HeaderLink from './HeaderLink.astro';
 import GoogleFont from './GoogleFont.astro';
@@ -7,6 +8,12 @@ import FontAwesome from './FontAwesome.astro';
 import Footer from './Footer.astro';
 import ParticleNetwork from './ParticleNetwork.astro';
 import ThemeToggle from './ThemeToggle.astro';
+
+interface Props {
+  title: string;
+  page?: string;
+  description?: string;
+}
 
 const { title, page, description } = Astro.props;
 const docTitle = title === 'Home Page' || !title ? '' : `${title} | `;
@@ -18,6 +25,14 @@ const docTitle = title === 'Home Page' || !title ? '' : `${title} | `;
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <meta name="theme-color" content="#ffffff" />
+        <script is:inline>
+            (() => {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const theme = sessionStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+                document.head.children.namedItem('theme-color').content = theme === 'dark' ? '#212121' : '#ffffff';
+            })();
+        </script>
         {description && <meta name="description" content={description} />}
 
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -46,11 +61,11 @@ const docTitle = title === 'Home Page' || !title ? '' : `${title} | `;
             </nav>
         </header>
 
-        <main data-page={page}>
+        <main data-page={page} class="container-fluid">
             <slot />
         </main>
 
-        <Footer />
+        <Footer class="container-fluid" />
 
         <script type="module" src="/google-analytics.js"></script>
     </body>
@@ -66,6 +81,8 @@ const docTitle = title === 'Home Page' || !title ? '' : `${title} | `;
             color var(--transitionSpeed) ease-in-out;
     }
     header {
+        background-color: var(--bg);
+        box-shadow: 0 0 1rem 1rem var(--bg);
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -81,7 +98,16 @@ const docTitle = title === 'Home Page' || !title ? '' : `${title} | `;
         }
     }
     #siteNav {
+        gap: 0.5rem;
         margin-block-start: 0;
+        padding: 0.5rem 0;
+
+        > a {
+            background-color: var(--bg);
+            border-radius: 0.25rem;
+            border: 1px solid;
+            padding: 0.25rem 0.5rem;
+        }
     }
     #homeLink {
         border-bottom: none;
@@ -94,5 +120,12 @@ const docTitle = title === 'Home Page' || !title ? '' : `${title} | `;
         position: fixed;
         right: 0;
         z-index: 1;
+    }
+</style>
+<style is:global>
+
+    footer.container-fluid, main.container-fluid {
+        max-width: 1000px;
+        margin: 0 auto;
     }
 </style>

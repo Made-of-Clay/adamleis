@@ -1,16 +1,20 @@
 ---
 import SiteShell from '@/components/SiteShell.astro';
 import TimeTag from '@/components/TimeTag.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
 
 export async function getStaticPaths() {
     const allBlogs = await getCollection('blog');
     const data = allBlogs
-        .filter(post => post.slug.includes('/'))
+        .filter(post => post.id.includes('/'))
         .map(post => ({
             params: {
-                collection: post.slug.split('/')[0],
-                slug: post.slug.split('/')[1],
+                collection: post.id.split('/')[0],
+                slug: post.id.split('/')[1],
             },
             props: { post },
         }));
@@ -20,7 +24,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 const title = post.data?.title ? post.data?.title : '';
 ---

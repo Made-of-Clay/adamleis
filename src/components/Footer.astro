@@ -1,9 +1,15 @@
 ---
 import IconLink from './IconLink.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: footerClass } = Astro.props;
 ---
 
-<footer id="bottom" class="text-sm leading-[1.75] mt-4">
-  <div>
+<footer id="bottom" class={footerClass}>
+  <nav>
     <IconLink
       href="https://www.facebook.com/people/Adam-Leis/pfbid023sf7k6XkbJ6kPcSVUHAiLcrF4iqFBdADZgBuV1hkrTcKgdZZ18RiNAW77fBkZjjvl/"
       iconTitle="Facebook"
@@ -24,7 +30,7 @@ import IconLink from './IconLink.astro';
       iconTitle="@theNthAdam"
       iconUse="#icon-x"
     />
-  </div>
+  </nav>
 
   <!-- Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
   <svg id="icon-defs">

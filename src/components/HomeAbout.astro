@@ -1,5 +1,10 @@
 ---
 const years = new Date().getFullYear() - 2010;
+
+interface Props {
+  class?: string;
+}
+
 const { class: classes } = Astro.props;
 import * as about from '../content/home/about.md';
 const content = (await about.compiledContent()).replace('{years}', `${years}`);
@@ -28,7 +33,7 @@ const content = (await about.compiledContent()).replace('{years}', `${years}`);
         }
     }
     img {
-        border: 0.2rem solid var(--emerald-500);
+        border: 0.2rem solid var(--pico-color-jade-500);
         border-radius: 50%;
         filter: contrast(1.25);
         margin: 1rem;

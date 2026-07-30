@@ -20,8 +20,8 @@ const posts = await getBlogPosts();
     {posts.map(post =>
         <BlogPost
             title={post.data.title}
-            description={post.data.description}
-            url={`/blog/${post.slug}`}
+            description={post.data.description ?? ''}
+            url={`/blog/${post.id}`}
             date={post.data.date}
         ></BlogPost>
     )}
